@@ -2,11 +2,9 @@
 $(document).ready(function () {
 
 
-	var map = L.map('map').setView([43.4149, -89.7262], 14);
+	var map = L.map('map').setView([43.4180,-89.7297], 13);
 
-	L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-	    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-	}).addTo(map);
+	L.tileLayer('data/tileserver/tiles/{z}/{x}/{y}.png').addTo(map);
 
 
 });
