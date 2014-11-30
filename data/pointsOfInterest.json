@@ -1,0 +1,13 @@
+{
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+                                                                                
+"features": [
+{ "type": "Feature", "properties": { "Name": "Prospect Point", "Description": "" }, "geometry": { "type": "Point", "coordinates": [ -89.738299533781529, 43.41897890349933, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Elephant Rock", "Description": "" }, "geometry": { "type": "Point", "coordinates": [ -89.725199587717384, 43.424720566608229, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Balanced Rock", "Description": "" }, "geometry": { "type": "Point", "coordinates": [ -89.725279325832517, 43.414248500267391, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Devil's Doorway", "Description": "" }, "geometry": { "type": "Point", "coordinates": [ -89.722150799312701, 43.414227808549228, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Steinke's Basin", "Description": "" }, "geometry": { "type": "Point", "coordinates": [ -89.709626747497865, 43.430073540961899, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Parfrey's Glen", "Description": "" }, "geometry": { "type": "Point", "coordinates": [ -89.64098978393649, 43.417826495612552, 0.0 ] } }
+]
+}

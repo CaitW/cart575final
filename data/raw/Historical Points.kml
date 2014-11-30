@@ -1,0 +1,493 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<kml xmlns='http://www.opengis.net/kml/2.2'>
+	<Document>
+		<name>Untitled layer</name>
+		<Placemark>
+			<styleUrl>#icon-22</styleUrl>
+			<name>Kirkland Hotel</name>
+			<ExtendedData>
+				<Data name='gx_media_links'>
+					<value>http://www.devilslakewisconsin.com/images/Kirkland-hotel250.jpg</value>
+				</Data>
+			</ExtendedData>
+			<description><![CDATA[The Kirkland hotel was considered more rustic compared to the deluxe Cliff House, located on the North shore. A pavilion came before the hotel in 1876. This was a place for people to cook, eat, and dance. The two-story hotel replaced it in 1889. 
+Kirk’s wife sold the property to the state around 1911 and it was leased by two other proprietors until 1927. It was still used to shelter groups throughout the 30’s and 40’s. In 1946, the state tore it down. It was the last hotel to be removed from the park.
+
+ * Photo provided by the Devil's Lake State Park Nature Center.]]></description>
+			<Point>
+				<coordinates>-89.725154,43.411715,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-22</styleUrl>
+			<name>Ringling Bungalow - South Shore Lodge</name>
+			<ExtendedData>
+				<Data name='gx_media_links'>
+					<value>http://www.devilslakewisconsin.com/images/ringling-bungalow250.jpg</value>
+				</Data>
+			</ExtendedData>
+			<description><![CDATA[Ringling brothers, Charles and Henry, leased land on the south shore in 1915. On this property they called Sandy Beach, they built a summer bungalow, cottages, an ice house, and a building for their car and chauffeur. These buildings are long gone and only the foundation for the house and bungalow remain.
+
+Today: Stone foundations are still visible.
+
+* Photo courtesy of the Devil's Lake State Park Nature Center.]]></description>
+			<Point>
+				<coordinates>-89.72848,43.408091,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-22</styleUrl>
+			<name>Ringling Cottage</name>
+			<ExtendedData>
+				<Data name='gx_media_links'>
+					<value>http://www.devilslakewisconsin.com/images/ringling-cottage250.jpg</value>
+				</Data>
+			</ExtendedData>
+			<description><![CDATA[** Photo courtesy of the Devil's Lake State Park Nature Center. Taken in 1969 just before the cottage was torn down.]]></description>
+			<Point>
+				<coordinates>-89.729193,43.407998,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-22</styleUrl>
+			<name>Log Cabin</name>
+			<ExtendedData>
+				<Data name='gx_media_links'>
+					<value>http://www.devilslakewisconsin.com/images/dlkLogCabin-250.jpg</value>
+				</Data>
+			</ExtendedData>
+			<description><![CDATA[Log cabin atop the park's east bluff.
+
+ 
+*Photo provided by the Devil's Lake State Park Nature Center.]]></description>
+			<Point>
+				<coordinates>-89.724188,43.415161,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-22</styleUrl>
+			<name>The Cliff House Hotel</name>
+			<ExtendedData>
+				<Data name='gx_media_links'>
+					<value>http://www.devilslakewisconsin.com/images/cliff-house-250.jpg</value>
+				</Data>
+			</ExtendedData>
+			<description><![CDATA[The hotel era at Devil’s lake began with the grand opening of the Minniwauken house on February 22,1866. Originally, it was only able to accommodate 20 guests. In 1873, it was enlarged to house 200 guests and renamed Cliff House. In 1884, the Annex was built so 400 visitors could stay and enjoy a plush vacation at Devil’s Lake. 
+
+ 
+*Photo provided by the Devil's Lake State Park Nature Center.]]></description>
+			<Point>
+				<coordinates>-89.727439,43.426518,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-22</styleUrl>
+			<name>Devil's Lake Quarry</name>
+			<ExtendedData>
+			</ExtendedData>
+			<Point>
+				<coordinates>-89.703203,43.412019,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-22</styleUrl>
+			<name>Palisade Park &amp; Observation Tower</name>
+			<ExtendedData>
+				<Data name='gx_media_links'>
+					<value>http://www.devilslakewisconsin.com/images/palisade-tower.jpg</value>
+				</Data>
+			</ExtendedData>
+			<description><![CDATA[Palisade Park was the brainchild of Arthur Ziemer. During a geology class field trip to Devil’s Lake in 1893,  he envisioned creating a resort area similar to the Catskills in New York State. In the summer of 1894, he acquired 90 acres on the west bluff and plotted the area for over 200 lots, a hotel, and a road. An 85 foot tower was constructed near the Ziemer’s cottage.  
+Palisade Park was never completed. Fate intervened when Ziemer died in October, 1895 of typhoid fever from drinking water from a nearby spring. As word of his death spread, no one wanted to live in what was to be "the most prominent resort in the northwest.”
+
+Today: Stone stairs & tower foundation are still visible.
+ 
+*Photo provided by the Devil's Lake State Park Nature Center.]]></description>
+			<Point>
+				<coordinates>-89.738624,43.420596,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-22</styleUrl>
+			<name>CCC Encampment</name>
+			<ExtendedData>
+				<Data name='gx_media_links'>
+					<value>http://www.devilslakewisconsin.com/images/CCC-250.jpg</value>
+				</Data>
+			</ExtendedData>
+			<description><![CDATA[This site marks the location of the Civilian Conservation Corps (CCC) Camp at Devil’s Lake. The CCC camp was started in 1934 and operated at the park until 1941. The CCC men did a lot of improvements to the park in their 7 years here. They built the park’s headquarters building and two bathhouses. They also constructed campgrounds and improved the trails. 
+
+ 
+* Photo courtesy of the Devil's Lake State Park Nature Center.]]></description>
+			<Point>
+				<coordinates>-89.710515,43.409997,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-22</styleUrl>
+			<name>Kirk Animal Tunnel</name>
+			<ExtendedData>
+				<Data name='gx_media_links'>
+					<value>http://www.devilslakewisconsin.com/images/kirk-animal-tunnel250.jpg</value>
+				</Data>
+			</ExtendedData>
+			<description><![CDATA[Nobel C. Kirk and his wife, Sarah Warner, had a working farm on their South shore property. The Kirks constructed a tunnel under the railroad to safely drive their cattle and horses from the barn to the lake.]]></description>
+			<Point>
+				<coordinates>-89.725546,43.413157,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-157</styleUrl>
+			<name>Bird Mound</name>
+			<ExtendedData>
+			</ExtendedData>
+			<Point>
+				<coordinates>-89.724931,43.412025,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-157</styleUrl>
+			<name>Linear Mound</name>
+			<ExtendedData>
+			</ExtendedData>
+			<Point>
+				<coordinates>-89.727874,43.427274,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-157</styleUrl>
+			<name>Linear Mound</name>
+			<ExtendedData>
+			</ExtendedData>
+			<Point>
+				<coordinates>-89.731145,43.427913000000004,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-22</styleUrl>
+			<name>Johnson Farm</name>
+			<ExtendedData>
+				<Data name='gx_media_links'>
+					<value>http://www.devilslakewisconsin.com/images/johnson-windmill.jpg</value>
+				</Data>
+			</ExtendedData>
+			<description><![CDATA[This site is the former Johnson Farm; settled by Abraham Lezeart in 1851. Abraham enticed his relatives, George and Laney Lezeart Johnson to immigrate from Ontario, Canada to cash in on the hop growing craze of 1867. The Johnson family remained, growing crops and raising poultry until 1973. They sold the land to the state.]]></description>
+			<Point>
+				<coordinates>-89.709841,43.432496,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-22</styleUrl>
+			<name>Down Hill Ski Run</name>
+			<ExtendedData>
+				<Data name='gx_media_links'>
+					<value>http://www.devilslakewisconsin.com/images/skihill250.jpg</value>
+				</Data>
+			</ExtendedData>
+			<description><![CDATA[In the 1940, the Devil's Lake Recration Club, a group of local people, leased some of the Park's land and had a ski area built on it. The club arranged for the "snow" train from Chicago to bring visitors up from Chicago to ski on Sundays. The area today is deserted and only the run and part of the tow remain.
+
+* Photo courtesy of the Devil's Lake State Park Nature Center.]]></description>
+			<Point>
+				<coordinates>-89.72020300000001,43.435244,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-22</styleUrl>
+			<name>Messenger Shore</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[Messenger Shore is named for Oscar and Emma Messenger who built and operated a hotel, pavilion, refreshment stand and barn in this area in the early 1890's. They also rented boats, ran a paddle wheel steamboat, and cut marsh hay for those that visited by horse and buggy. 
+
+By 1910 there were 31 cottages and 41 private parcels of land on the south shore of Devil's Lake. The Messengers sold to the State in 1911, as the Park was being established. the first park manager and his wife lived in the hotel for a few years. The UW Summer Survey Camp moved from Kirkland, on the southeast shore to Messenger Shore and stayed from 1920 through 1956. They occupied tents and cabins on concrete slabs. Most were removed for construction of the nearby parking area, but a few remain near the cache area.]]></description>
+			<Point>
+				<coordinates>-89.741006,43.412249,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-22</styleUrl>
+			<name>UW Surveyors Camp </name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[Universities have been bringing students to study Devil’s Lake since the mid-1800’s. In the 1920’s the University of Wisconsin started a summer survey camp at Devil’s Lake. The camp was located on the Messenger family’s property. The Messenger family ran a local hotel on the southwest shore until 1911. The Messenger’s barn became the camp’s classroom, which was called Owen Hall. The camp was closed in 1956.
+
+Today: Various remnants and stone foundations are seen at this location.]]></description>
+			<Point>
+				<coordinates>-89.740856,43.412358000000005,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-22</styleUrl>
+			<name>Kirkland Pavillion</name>
+			<ExtendedData>
+				<Data name='gx_media_links'>
+					<value>http://www.devilslakewisconsin.com/images/kirkland-pav250.jpg</value>
+				</Data>
+			</ExtendedData>
+			<description><![CDATA[The Pavillion was built in 1876. The building was available for rentals as a temporary home, parties & dances.
+
+ 
+
+ 
+*Photo Provided by the Devil's Lake State Park Nature Center.]]></description>
+			<Point>
+				<coordinates>-89.724693,43.411938,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-22</styleUrl>
+			<name>Canfield's Tree house</name>
+			<ExtendedData>
+				<Data name='gx_media_links'>
+					<value>http://www.devilslakewisconsin.com/images/canfieldtreehouse250.jpg</value>
+				</Data>
+			</ExtendedData>
+			<description><![CDATA[William H. Canfield was a civil engineer and the first county surveyor; in the late 1800's. Later in life, Canfield started the “Old Settlers Association” (OSA). Around 1903, he bought 3 acres of land near Messenger shore and built a cabin, treehouse, and assembly hall. 
+
+The property proved to be too small and the OSA never became popular. After Canfield's death in 1913 the land changed hands several times before the park acquired the it in 1943. Today, the only sign of the OSA is the circular foundation of the tree house. 
+
+* Photo courtesy of the Devil's Lake State Park Nature Center.]]></description>
+			<Point>
+				<coordinates>-89.74571600000002,43.413902,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-22</styleUrl>
+			<name>South Shore Road</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[South Shore Road, was constructed thanks to the Ringling Brothers. Prior to the construction of the road, there was only a permanent path between the southwest and southeast shore. The construction of the road provided a round from the Messenger Shore to highway 113. It was reported that circus elephants and circus draft horses haule materials for the road, but sadly this was not the case.]]></description>
+			<Point>
+				<coordinates>-89.726243,43.407511,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-22</styleUrl>
+			<name>Warner Road</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[The entrance road, formally called Warner Road, was built in thanks to Wilbur Warner. The park’s original entrance was Old Lake Road and the current park’s exit.  Warner bequeathed $40,000 for the road to be constructed in 1919. Baraboo high school buys helped complete the road in the park. Their foreman was an interesting character, a lumberjack from Northern Wisconsin. He was said to wear hobnailed boots, corduroy pants, a checkered shirt, and red underwear and cuss with vigor!]]></description>
+			<Point>
+				<coordinates>-89.737444,43.431668,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-22</styleUrl>
+			<name>Kirk Farm</name>
+			<ExtendedData>
+				<Data name='gx_media_links'>
+					<value>http://www.devilslakewisconsin.com/images/kirkland-barn-250.jpg</value>
+				</Data>
+			</ExtendedData>
+			<description><![CDATA[Approximate Location of Kirk Barn.
+
+ 
+* Photo Provided by Devil's Lake State Park Nature Center.]]></description>
+			<Point>
+				<coordinates>-89.722574,43.412623,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-22</styleUrl>
+			<name>Water Diversion</name>
+			<ExtendedData>
+				<Data name='gx_media_links'>
+					<value>http://www.devilslakewisconsin.com/images/water-diversion.jpg</value>
+				</Data>
+			</ExtendedData>
+			<description><![CDATA[At one time water was diverted from a nearby stream to increase water levels in times of drought.  The diversion dam can still be seen at this location.]]></description>
+			<Point>
+				<coordinates>-89.727353,43.429099,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-157</styleUrl>
+			<name>Bear Mound</name>
+			<ExtendedData>
+			</ExtendedData>
+			<Point>
+				<coordinates>-89.727917,43.427243,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-157</styleUrl>
+			<name>Panther Mound</name>
+			<ExtendedData>
+			</ExtendedData>
+			<Point>
+				<coordinates>-89.733109,43.428365,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-157</styleUrl>
+			<name>Lynx Mound</name>
+			<ExtendedData>
+			</ExtendedData>
+			<Point>
+				<coordinates>-89.732573,43.430094,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-22</styleUrl>
+			<name>Golf Course Club House</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[The Nature Center was the golf course clubhouse, where golfers could socialize, cool off, and enjoy a beverage or snack.]]></description>
+			<Point>
+				<coordinates>-89.733539,43.429533,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-22</styleUrl>
+			<name>9-Hole Golf Course</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[If you stood here in 1925, you might have heard someone shout “FORE!” as they played golf in what is now the Quartzite Campground. In 1922, twenty acres were leased from the Claude family for the development of a 9-hole golf course. 
+Visitors could enjoy a round of golf at Devil’s Lake from 1925 to 1961; the golf course is now located at the Baraboo Country Club.]]></description>
+			<Point>
+				<coordinates>-89.73493300000001,43.430281,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-157</styleUrl>
+			<name>Bear Mound</name>
+			<ExtendedData>
+			</ExtendedData>
+			<Point>
+				<coordinates>-89.734064,43.42785,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-157</styleUrl>
+			<name>Conical Mound</name>
+			<ExtendedData>
+			</ExtendedData>
+			<Point>
+				<coordinates>-89.733002,43.430048,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-22</styleUrl>
+			<name>Park Headquarters</name>
+			<ExtendedData>
+			</ExtendedData>
+			<description><![CDATA[This building was one of the last projects constructed by the Civilan Conservation Corps (CCC) located in the park in the 1930's. This project was started in 1939 and finished the following year.]]></description>
+			<Point>
+				<coordinates>-89.730556,43.428271,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-22</styleUrl>
+			<name>Stone Garage</name>
+			<ExtendedData>
+				<Data name='gx_media_links'>
+					<value>http://www.devilslakewisconsin.com/images/stone-garage.jpg</value>
+				</Data>
+			</ExtendedData>
+			<description><![CDATA[This stone building was constructed by the Works Projects Administration (WPA) during the same time as the Civilan Conservation Corps (CCC) was working in the park.
+
+The stone mason hired to work with the WPA men was a German man named Fred Keeser. Fred was very particular about his work and would often replace stones in the walls that were placed in his absence. The garage is a testimony to his careful and beautiful work. 
+
+This is now the law enforement building, used by the rangers employed by the park.]]></description>
+			<Point>
+				<coordinates>-89.73135,43.429892,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-22</styleUrl>
+			<name>Chateau</name>
+			<ExtendedData>
+				<Data name='gx_media_links'>
+					<value>http://www.devilslakewisconsin.com/images/chateau.jpg</value>
+				</Data>
+			</ExtendedData>
+			<description><![CDATA[The Chateau was built in 1925 and remodeled over a 3 year period from 1939 to 1942. It has pretty much stayed the same until 2010/2011 when the interior of the building got a face lift.]]></description>
+			<Point>
+				<coordinates>-89.730878,43.427445,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-22</styleUrl>
+			<name>Bath house</name>
+			<ExtendedData>
+				<Data name='gx_media_links'>
+					<value>http://www.devilslakewisconsin.com/images/ns-bathhouse.jpg</value>
+				</Data>
+			</ExtendedData>
+			<Point>
+				<coordinates>-89.72959,43.42725800000001,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-22</styleUrl>
+			<name>Toboggan Run</name>
+			<ExtendedData>
+				<Data name='gx_media_links'>
+					<value>http://www.devilslakewisconsin.com/images/tobogganrun-250.jpg</value>
+				</Data>
+			</ExtendedData>
+			<description><![CDATA[The toboggan run was constructed in the 1930’s by the state but maintained by young men hired by the National Youth Administration. Visitors could come rocketing down the run at speeds of 65 to 70 mph.  During the holiday season, the City of Baraboo would illuminated the track with lights by lights. In January 1940, several high school students went down the run when it was closed and were thrown when they hit a snowdrift, killing one girl. Run was closed about a year later.
+
+* Photo courtesy of the Devil's Lake State Park Nature Center.]]></description>
+			<Point>
+				<coordinates>-89.73532000000002,43.428801,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-22</styleUrl>
+			<name>Claude House</name>
+			<ExtendedData>
+				<Data name='gx_media_links'>
+					<value>http://www.devilslakewisconsin.com/images/claude-fireplace.jpg</value>
+				</Data>
+			</ExtendedData>
+			<description><![CDATA[Louis J. Claude was one of the first settlers at Devil’s Lake. He built “Eagle Crag” in 1857 and named it after an area in England’s Lake District where he was originally from. The Claude Family; Elvira (wife), Louise Ward (daughter) and Louis Ward (son) lived in the richly designed Tudor house for many years. The house was removed in 1953. 
+
+*Photo: What remains of the Claude House today.]]></description>
+			<Point>
+				<coordinates>-89.734354,43.428271,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-22</styleUrl>
+			<name>Old Settler's Society Clubhouse / Cabin</name>
+			<ExtendedData>
+				<Data name='gx_media_links'>
+					<value>http://www.devilslakewisconsin.com/images/oldsettlersclubhouse250.jpg</value>
+				</Data>
+			</ExtendedData>
+			<description><![CDATA[* Photo courtesy of the Devil's Lake State Park Nature Center.]]></description>
+			<Point>
+				<coordinates>-89.745888,43.414065,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<styleUrl>#icon-22</styleUrl>
+			<name>Ziemer Cottage - Palisade Park</name>
+			<ExtendedData>
+				<Data name='gx_media_links'>
+					<value>http://www.devilslakewisconsin.com/images/zimmer-cottage250.jpg</value>
+				</Data>
+			</ExtendedData>
+			<description><![CDATA[* Photo courtesy of the Devil's Lake State Park Nature Center.]]></description>
+			<Point>
+				<coordinates>-89.738619,43.41961,0.0</coordinates>
+			</Point>
+		</Placemark>
+		<Style id='icon-157'>
+			<IconStyle>
+				<scale>1.1</scale>
+				<Icon>
+					<href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+				</Icon>
+			</IconStyle>
+		</Style>
+		<Style id='icon-22'>
+			<IconStyle>
+				<scale>1.1</scale>
+				<Icon>
+					<href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+				</Icon>
+			</IconStyle>
+		</Style>
+	</Document>
+</kml>
