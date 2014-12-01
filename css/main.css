@@ -102,11 +102,77 @@ textarea {
 html, body
 {
     height: 100%;
+    font-family: "Open Sans";
 }
 
 #map
 {
     height: 100%;
+}
+
+.historicalPoints
+{
+    background-color: red;
+    width: 5px;
+    height: 5px;
+}
+
+.historicalPoints:hover
+{
+    background-color: black;
+    cursor: pointer;
+}
+
+.pointsOfInterest
+{
+    background-color: blue;
+}
+
+.pointsOfInterest
+{
+    cursor: pointer;
+    background-color: black;
+}
+
+#legendHeader
+{
+    padding: 5px;
+    font-weight: bold;
+}
+
+#legend
+{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 200px;
+    background-color: red;
+}
+
+.legendItem
+{
+    padding-left: 10px;
+}
+
+#legendContent
+{
+    display: none;
+}
+
+#legendChevron
+{
+    float: right;
+
+}
+
+#legendChevron:hover
+{
+    cursor: pointer;
+}
+
+.legendCheckbox
+{
+    margin-right: 10px;
 }
 
 
