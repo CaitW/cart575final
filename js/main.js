@@ -5,8 +5,9 @@ var layers;
 
 $(document).ready(function () {
 
-
 	map = L.map('map').setView([43.4180,-89.7297], 14);
+
+	L.Icon.Default.imagePath = "img";
 
 	L.tileLayer('https://a.tiles.mapbox.com/v4/nps.2yxv8n84,nps.jhd2e8lb/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibnBzIiwiYSI6Ik5yOFVUR2sifQ.lcpvx7UEgHGoeObibjqMBw').addTo(map);
 
