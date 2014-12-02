@@ -5,7 +5,11 @@ var layers;
 
 $(document).ready(function () {
 
-	map = L.map('map').setView([43.4180,-89.7297], 14);
+	map = L.map('map', {
+		zoomControl: false
+	}).setView([43.4180,-89.7297], 14);
+
+	var zoomControl = new L.control.zoom({position: "topright"}).addTo(map);
 
 	L.Icon.Default.imagePath = "img";
 
