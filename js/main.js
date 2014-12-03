@@ -15,22 +15,26 @@ $(document).ready(function () {
 
 	L.tileLayer('https://a.tiles.mapbox.com/v4/nps.2yxv8n84,nps.jhd2e8lb/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibnBzIiwiYSI6Ik5yOFVUR2sifQ.lcpvx7UEgHGoeObibjqMBw').addTo(map);
 
-	map.on('layeradd', function (layer){
-		console.log(layer);
-		//$("#legendContent").append("<div class='legendItem'><input type='checkbox' class='legendCheckbox'>" + layer + "</div>");
-	});
-
 	var basemaps = {};
 	layers = {};
 
-	var layerControl = new L.control.layers(basemaps, layers).addTo(map);
 
-	$(document).on("layeradd", function (layer) {
-		console.log(layer)
-		map.removeControl(layerControl);
-		layerControl = new L.control.layers(basemaps, layers, {
-			position: "bottomright"
-		}).addTo(map);
+	$(document).on("layeradd", function (e, layer, layerName) {
+		console.log(layer, layerName);
+		$("#legendContent").append("<div class='legendItem'><input type='checkbox' class='legendCheckbox' value='" + layerName + "' checked>" + layerName + "</div>");
+	});
+
+	$(document).on("change", ".legendCheckbox", function (e) {
+		if($(this).prop("checked"))
+		{
+			var layerName = $(this).val();
+			map.addLayer(layers[layerName]);
+		}
+		else
+		{
+			var layerName = $(this).val();
+			map.removeLayer(layers[layerName]);
+		}
 	});
 
 	// add all our data
@@ -45,7 +49,7 @@ $(document).ready(function () {
 			style: style
 		}).addTo(map);
 	}).complete(function() {
-		$(document).trigger("layeradd", layers["Buildings"]);
+		$(document).trigger("layeradd", [layers["Buildings"], "Buildings"]);
 	});
 
 	$.getJSON("data/campsites.json", function (data) {
@@ -58,14 +62,15 @@ $(document).ready(function () {
 			style: style
 		}).addTo(map);
 	}).complete(function() {
-		$(document).trigger("layeradd", layers["Campsites"]);
+		$(document).trigger("layeradd", [layers["Campsites"], "Campsites"]);
 	});
 
 	$.getJSON("data/historicalPoints.json", function (data) {
 		layers["Historical Points"] = L.geoJson(data, {
 			pointToLayer: function (feature, latlng) {
 				var marker = L.divIcon({
-					className: "historicalPoints"
+					className: "historicalPoints",
+					//html: "<img src='img/historical-points.svg'>"
 				});
 				return L.marker(latlng, {icon: marker})
 			},
@@ -74,14 +79,15 @@ $(document).ready(function () {
 			}
 		}).addTo(map);
 	}).complete(function() {
-		$(document).trigger("layeradd", layers["Historical Points"]);
+		$(document).trigger("layeradd", [layers["Historical Points"], "Historical Points"]);
 	});
 
 	$.getJSON("data/pointsOfInterest.json", function (data) {
 		layers["Points of Interest"] = L.geoJson(data, {
 			pointToLayer: function (feature, latlng) {
 				var marker = L.divIcon({
-					className: "pointsOfInterest"
+					className: "pointsOfInterest",
+					html: "<img src='img/points-of-interest.svg'>"
 				});
 				return L.marker(latlng, {icon: marker})
 			},
@@ -90,20 +96,21 @@ $(document).ready(function () {
 			}
 		}).addTo(map);
 	}).complete(function() {
-		$(document).trigger("layeradd", layers["Points of Interest"]);
+		$(document).trigger("layeradd", [layers["Points of Interest"], "Points of Interest"]);
 	});
 
 	$.getJSON("data/shelters.json", function (data) {
 		layers["Shelters"]= L.geoJson(data, {
 			pointToLayer: function (feature, latlng) {
 				var marker = L.divIcon({
-					className: "shelters"
+					className: "shelters",
+					html: "<img src='img/shelters.svg'>"
 				});
 				return L.marker(latlng, {icon: marker})
 			}
 		}).addTo(map);
 	}).complete(function() {
-		$(document).trigger("layeradd", layers["Shelters"]);
+		$(document).trigger("layeradd", [layers["Shelters"], "Shelters"]);
 	});
 
 	$.getJSON("data/trails.json", function (data) {
@@ -117,7 +124,7 @@ $(document).ready(function () {
 			style: style
 		}).addTo(map);
 	}).complete(function() {
-		$(document).trigger("layeradd", layers["Trails"]);
+		$(document).trigger("layeradd", [layers["Trails"], "Trails"]);
 	});
 
 

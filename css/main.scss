@@ -108,11 +108,25 @@ html, body
 #map
 {
     height: 100%;
+
+    .leaflet-control-layers
+    {
+        .leaflet-control-layers-toggle
+        {
+            width: auto;
+            height: auto;
+            a
+            {
+                content: "Legend";
+            }
+        }
+    }
 }
 
 .historicalPoints
 {
-    background-color: red;
+    background-color: #856363;
+    border-radius: 50%;
     width: 5px;
     height: 5px;
 }
@@ -125,14 +139,15 @@ html, body
 
 .pointsOfInterest
 {
-    background-color: blue;
+    //background-color: blue;
 }
 
-.pointsOfInterest
+.pointsOfInterest:hover
 {
     cursor: pointer;
-    background-color: black;
+    //background-color: black;
 }
+
 
 nav
 {
