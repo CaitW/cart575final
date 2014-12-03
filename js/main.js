@@ -20,7 +20,6 @@ $(document).ready(function () {
 
 
 	$(document).on("layeradd", function (e, layer, layerName) {
-		console.log(layer, layerName);
 		$("#legendContent").append("<div class='legendItem'><input type='checkbox' class='legendCheckbox' value='" + layerName + "' checked>" + layerName + "</div>");
 	});
 
@@ -114,6 +113,7 @@ $(document).ready(function () {
 	});
 
 	$.getJSON("data/trails.json", function (data) {
+
 		var style = {
 			"color": "#856363",
 		    "weight": 0.75,
@@ -121,8 +121,21 @@ $(document).ready(function () {
 		};
 		layers["Trails"] = L.geoJson(data, {
 			className: "trails",
-			style: style
+			style: style,
+			onEachFeature: function (feature, layer) {
+				if(feature.properties.name != null)
+				{
+					layer.bindPopup(feature.properties.name);
+					layer.on('mouseover', function (e) {
+		            	this.openPopup();
+			        });
+			        layer.on('mouseout', function (e) {
+			            this.closePopup();
+			        });
+				}
+			}
 		}).addTo(map);
+
 	}).complete(function() {
 		$(document).trigger("layeradd", [layers["Trails"], "Trails"]);
 	});

@@ -125,10 +125,10 @@ html, body
 
 .historicalPoints
 {
+    height: 0.6vw !important;
+    width: 0.6vw !important;
     background-color: #856363;
     border-radius: 50%;
-    width: 5px;
-    height: 5px;
 }
 
 .historicalPoints:hover
@@ -139,12 +139,14 @@ html, body
 
 .pointsOfInterest
 {
-    //background-color: blue;
+    height: 1.2vw !important;
+    width: 1.2vw !important;
 }
 
 .pointsOfInterest:hover
 {
     cursor: pointer;
+
     //background-color: black;
 }
 
