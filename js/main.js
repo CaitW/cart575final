@@ -109,7 +109,7 @@ $(document).ready(function () {
 	$.getJSON("data/trails.json", function (data) {
 		var style = {
 			"color": "#856363",
-		    "weight": 1.2,
+		    "weight": 0.75,
 		    "opacity": 0.65
 		};
 		layers["Trails"] = L.geoJson(data, {

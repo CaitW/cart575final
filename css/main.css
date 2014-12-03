@@ -86,7 +86,8 @@ html, body {
   height: 100%; }
 
 .historicalPoints {
-  background-color: red;
+  background-color: #856363;
+  border-radius: 50%;
   width: 5px;
   height: 5px; }
 
