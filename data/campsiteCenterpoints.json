@@ -1,0 +1,12 @@
+{
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+                                                                                
+"features": [
+{ "type": "Feature", "properties": { "Name": "Quartzite Campground", "Description": "" }, "geometry": { "type": "Point", "coordinates": [ -89.734849911600492, 43.432273711314792, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Northern Lights Campground", "Description": "" }, "geometry": { "type": "Point", "coordinates": [ -89.728247364351574, 43.432146631376384, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Ice Age Campground", "Description": "" }, "geometry": { "type": "Point", "coordinates": [ -89.724448325469965, 43.435130819406382, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Ice Age Campground", "Description": "" }, "geometry": { "type": "Point", "coordinates": [ -89.718, 43.4335, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Group Campgrounds", "Description": "" }, "geometry": { "type": "Point", "coordinates": [ -89.710955622235218, 43.410267493649648, 0.0 ] } }
+]
+}

@@ -98,6 +98,23 @@ $(document).ready(function () {
 		$(document).trigger("layeradd", [layers["Points of Interest"], "Points of Interest"]);
 	});
 
+	$.getJSON("data/campsiteCenterpoints.json", function (data) {
+		layers["Campsite Centerpoints"] = L.geoJson(data, {
+			pointToLayer: function (feature, latlng) {
+				var marker = L.divIcon({
+					className: "campsiteCenterpoints",
+					html: "<img src='img/campsites.svg'>"
+				});
+				return L.marker(latlng, {icon: marker})
+			},
+			onEachFeature: function(feature, layer) {
+				layer.bindPopup(feature.properties.Name);
+			}
+		}).addTo(map);
+	}).complete(function() {
+		$(document).trigger("layeradd", [layers["Campsite Centerpoints"], "Campsite Centerpoints"]);
+	});
+
 	$.getJSON("data/shelters.json", function (data) {
 		layers["Shelters"]= L.geoJson(data, {
 			pointToLayer: function (feature, latlng) {

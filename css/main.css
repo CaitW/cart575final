@@ -90,6 +90,9 @@ html, body {
     #map .leaflet-control-layers .leaflet-control-layers-toggle a {
       content: "Legend"; }
 
+.leaflet-container {
+  font: 1.3vh "Source Sans Pro", Helvetica, sans-serif; }
+
 .historicalPoints {
   height: 0.6vw !important;
   width: 0.6vw !important;
