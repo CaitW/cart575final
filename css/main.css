@@ -156,6 +156,15 @@ nav:hover #nav-content {
       #legend #legendContent .legendItem .legendCheckbox {
         margin-right: 1vw; }
 
+h3 {
+  font-family: "Source Sans Pro";
+  font-size: 1.5vw;
+  font-weight: bolder;
+  font-color: #666666;
+  font-variant: small-caps; /* not 100% set on this */
+  margin-bottom: 0.01vw;
+}
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
