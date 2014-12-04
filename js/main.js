@@ -64,6 +64,19 @@ $(document).ready(function () {
 		$(document).trigger("layeradd", [layers["Campsites"], "Campsites"]);
 	});
 
+	$.getJSON("data/parkboundaries.json", function (data) {
+		var style = {
+			"color": "#33691E",
+		    "weight": 0,
+		    "opacity": 0.65
+		};
+		layers["Park Boundaries"] = L.geoJson(data, { 
+			style: style
+		}).addTo(map);
+	}).complete(function() {
+		$(document).trigger("layeradd", [layers["Park Boundaries"], "Park Boundaries"]);
+	});
+
 	$.getJSON("data/historicalPoints.json", function (data) {
 		layers["Historical Points"] = L.geoJson(data, {
 			pointToLayer: function (feature, latlng) {
@@ -128,6 +141,8 @@ $(document).ready(function () {
 	}).complete(function() {
 		$(document).trigger("layeradd", [layers["Shelters"], "Shelters"]);
 	});
+
+
 
 	$.getJSON("data/trails.json", function (data) {
 
