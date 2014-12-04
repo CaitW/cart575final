@@ -74,7 +74,7 @@ $(document).ready(function () {
 				return L.marker(latlng, {icon: marker})
 			},
 			onEachFeature: function(feature, layer) {
-				layer.bindPopup(feature.properties.Name + "<br>" + feature.properties.Description);
+				layer.bindPopup("<center><h3>" + feature.properties.Name + "</h3><br>" + feature.properties.Description + "</center>");
 			}
 		}).addTo(map);
 	}).complete(function() {
@@ -91,7 +91,7 @@ $(document).ready(function () {
 				return L.marker(latlng, {icon: marker})
 			},
 			onEachFeature: function(feature, layer) {
-				layer.bindPopup(feature.properties.Name);
+				layer.bindPopup("<center><h3>" + feature.properties.Name + "</h3></center>");
 			}
 		}).addTo(map);
 	}).complete(function() {
@@ -108,7 +108,7 @@ $(document).ready(function () {
 				return L.marker(latlng, {icon: marker})
 			},
 			onEachFeature: function(feature, layer) {
-				layer.bindPopup(feature.properties.Name);
+				layer.bindPopup("<center><h3>" + feature.properties.Name + "</h3></center>");
 			}
 		}).addTo(map);
 	}).complete(function() {
@@ -142,7 +142,7 @@ $(document).ready(function () {
 			onEachFeature: function (feature, layer) {
 				if(feature.properties.name != null)
 				{
-					layer.bindPopup(feature.properties.name);
+					layer.bindPopup("<center><h3>" + feature.properties.name + "</center></h3>");
 				}
 			}
 		}).addTo(map);
