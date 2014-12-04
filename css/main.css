@@ -201,29 +201,27 @@ h3 {
 	
 }
 
-#bar #leftScroll, #bar #rightScroll
+#leftScroll, #rightScroll
 {
 	display: none;
 	position: absolute;
 	font-size: 4vw;
-	height: 100%;
 }
 
 #leftScroll 
 {
-	top: 0;
+	top: 30%;
 	left: 2%;
 }
 
 #rightScroll 
 {
-	top: 0;
+	top: 30%;
 	right: 2%;
 }
 
 #leftScroll i, #rightScroll i
 {
-	
 	
 }
 
@@ -236,6 +234,29 @@ h3 {
 #bar:hover  #leftScroll, #bar:hover #rightScroll
 {
 	display: block;
+}
+
+#barHeader
+{
+	width: 88%;
+	margin-left: 6%;
+	display: block;
+	height: 30%;
+	font-family: "Source Sans Pro";
+	font-weight: bold;
+	font-size: 2vw;
+	color: #91968A;
+}
+
+#barBody
+{
+	display: block;
+	width: 88%;
+	margin-left: 6%;
+	height: 70%;
+	font-family: "Source Sans Pro";
+	font-size: 1vw;
+	color: #ccc;
 }
 
 /* ==========================================================================
