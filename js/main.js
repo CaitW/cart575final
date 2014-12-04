@@ -143,12 +143,6 @@ $(document).ready(function () {
 				if(feature.properties.name != null)
 				{
 					layer.bindPopup(feature.properties.name);
-					layer.on('mouseover', function (e) {
-		            	this.openPopup();
-			        });
-			        layer.on('mouseout', function (e) {
-			            this.closePopup();
-			        });
 				}
 			}
 		}).addTo(map);
