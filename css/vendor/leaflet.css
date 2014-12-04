@@ -181,7 +181,7 @@
 /* visual tweaks */
 
 .leaflet-container {
-	background: #ddd;
+	background: #DCD7D0;
 	outline: 0;
 	}
 .leaflet-container a {
@@ -421,7 +421,7 @@
 	}
 .leaflet-popup-content-wrapper,
 .leaflet-popup-tip {
-	background: white;
+	background: #EBE8E5;
 
 	box-shadow: 0 3px 14px rgba(0,0,0,0.4);
 	}
@@ -434,7 +434,7 @@
 	width: 18px;
 	height: 14px;
 	font: 16px/14px Tahoma, Verdana, sans-serif;
-	color: #c3c3c3;
+	color: #EBE8E5;
 	text-decoration: none;
 	font-weight: bold;
 	background: transparent;
