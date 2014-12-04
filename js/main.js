@@ -13,7 +13,16 @@ $(document).ready(function () {
 
 	L.Icon.Default.imagePath = "img";
 
-	L.tileLayer('https://a.tiles.mapbox.com/v4/nps.2yxv8n84,nps.jhd2e8lb/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibnBzIiwiYSI6Ik5yOFVUR2sifQ.lcpvx7UEgHGoeObibjqMBw').addTo(map);
+	// hillshade
+	L.tileLayer('https://a.tiles.mapbox.com/v4/nps.a6be40f0/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibnBzIiwiYSI6Ik5yOFVUR2sifQ.lcpvx7UEgHGoeObibjqMBw').addTo(map);
+	// park boundaries
+	L.tileLayer('data/custom-tiles/parksBoundaries/{z}/{x}/{y}.png').addTo(map);
+	//water
+	L.tileLayer('https://a.tiles.mapbox.com/v4/nps.a706dc69/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibnBzIiwiYSI6Ik5yOFVUR2sifQ.lcpvx7UEgHGoeObibjqMBw').addTo(map);
+	// roads, trails
+	L.tileLayer('https://a.tiles.mapbox.com/v4/nps.8eb491cc/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibnBzIiwiYSI6Ik5yOFVUR2sifQ.lcpvx7UEgHGoeObibjqMBw').addTo(map);
+	// labels
+	L.tileLayer('https://a.tiles.mapbox.com/v4/nps.5dfeaf68/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibnBzIiwiYSI6Ik5yOFVUR2sifQ.lcpvx7UEgHGoeObibjqMBw').addTo(map);
 
 	var basemaps = {};
 	layers = {};
@@ -42,19 +51,6 @@ $(document).ready(function () {
 	// Polygons //
 	//////////////
 
-	$.getJSON("data/parkboundaries.json", function (data) {
-		var style = {
-			"color": "#33691E",
-		    "weight": 0,
-		    "opacity": 0.65
-		};
-		layers["Park Boundaries"] = L.geoJson(data, { 
-			style: style
-		}).addTo(map);
-	}).complete(function() {
-		$(document).trigger("layeradd", [layers["Park Boundaries"], "Park Boundaries"]);
-	});
-
 	$.getJSON("data/buildings.json", function (data) {
 		var style = {
 			"color": "#7e7e7e",
@@ -70,9 +66,9 @@ $(document).ready(function () {
 
 	$.getJSON("data/campsites.json", function (data) {
 		var style = {
-			"color": "#cccccc",
-		    "weight": 5,
-		    "opacity": 0.65
+			"color": "#333333",
+		    "weight": 0,
+		    "opacity": 0.3
 		};
 		layers["Campsites"] = L.geoJson(data, { 
 			style: style
