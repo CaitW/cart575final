@@ -38,11 +38,28 @@ $(document).ready(function () {
 
 	// add all our data
 
+	//////////////
+	// Polygons //
+	//////////////
+
+	$.getJSON("data/parkboundaries.json", function (data) {
+		var style = {
+			"color": "#33691E",
+		    "weight": 0,
+		    "opacity": 0.65
+		};
+		layers["Park Boundaries"] = L.geoJson(data, { 
+			style: style
+		}).addTo(map);
+	}).complete(function() {
+		$(document).trigger("layeradd", [layers["Park Boundaries"], "Park Boundaries"]);
+	});
+
 	$.getJSON("data/buildings.json", function (data) {
 		var style = {
 			"color": "#7e7e7e",
 		    "weight": 0,
-		    "opacity": 0.8
+		    "opacity": 0.9
 		};
 		layers["Buildings"] = L.geoJson(data, {
 			style: style
@@ -64,17 +81,35 @@ $(document).ready(function () {
 		$(document).trigger("layeradd", [layers["Campsites"], "Campsites"]);
 	});
 
-	$.getJSON("data/parkboundaries.json", function (data) {
+	$.getJSON("data/bluffs.json", function (data) {
 		var style = {
-			"color": "#33691E",
+			"color": "#000000",
 		    "weight": 0,
 		    "opacity": 0.65
 		};
-		layers["Park Boundaries"] = L.geoJson(data, { 
+		layers["Bluffs"] = L.geoJson(data, { 
 			style: style
 		}).addTo(map);
 	}).complete(function() {
-		$(document).trigger("layeradd", [layers["Park Boundaries"], "Park Boundaries"]);
+		$(document).trigger("layeradd", [layers["Bluffs"], "Bluffs"]);
+	});
+
+	////////////
+	// Points //
+	////////////
+
+	$.getJSON("data/boatLaunch.json", function (data) {
+		layers["Boat Launches"] = L.geoJson(data, {
+			pointToLayer: function (feature, latlng) {
+				var marker = L.divIcon({
+					className: "boatLaunches",
+					//html: "<img src='img/historical-points.svg'>"
+				});
+				return L.marker(latlng, {icon: marker})
+			}
+		}).addTo(map);
+	}).complete(function() {
+		$(document).trigger("layeradd", [layers["Boat Launches"], "Boat Launches"]);
 	});
 
 	$.getJSON("data/historicalPoints.json", function (data) {
@@ -142,7 +177,37 @@ $(document).ready(function () {
 		$(document).trigger("layeradd", [layers["Shelters"], "Shelters"]);
 	});
 
+	$.getJSON("data/parkingLots.json", function (data) {
+		layers["Parking Lots"]= L.geoJson(data, {
+			pointToLayer: function (feature, latlng) {
+				var marker = L.divIcon({
+					className: "parkingLots",
+					//html: "<img src='img/shelters.svg'>"
+				});
+				return L.marker(latlng, {icon: marker})
+			}
+		}).addTo(map);
+	}).complete(function() {
+		$(document).trigger("layeradd", [layers["Parking Lots"], "Parking Lots"]);
+	});
 
+	$.getJSON("data/restrooms.json", function (data) {
+		layers["Restrooms"]= L.geoJson(data, {
+			pointToLayer: function (feature, latlng) {
+				var marker = L.divIcon({
+					className: "restrooms",
+					//html: "<img src='img/shelters.svg'>"
+				});
+				return L.marker(latlng, {icon: marker})
+			}
+		}).addTo(map);
+	}).complete(function() {
+		$(document).trigger("layeradd", [layers["Restrooms"], "Restrooms"]);
+	});
+
+	///////////////
+	// Polylines //
+	///////////////
 
 	$.getJSON("data/trails.json", function (data) {
 

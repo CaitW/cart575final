@@ -113,17 +113,29 @@ html, body {
 nav {
   position: absolute;
   left: 1vh;
-  top: 1vh; }
-  nav #logoBox {
+  top: 1vh; 
+}
+
+#logoBox {
     display: inline-block;
-    width: 10vh;
+    /*width: 10vh;
     height: 10vh;
-    background-color: red; }
-  nav #nav-content {
-    display: none; }
+    background-color: red;*/ 
+}
+
+#logoBox img 
+{
+   vertical-align: bottom;
+}
+ 
+#nav-content 
+{
+    display: none; 
+}
 
 nav:hover #nav-content {
   display: inline-block;
+
   width: 60vh;
   height: 10vh;
   margin-left: 1vh;
