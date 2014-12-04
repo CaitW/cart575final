@@ -1,0 +1,26 @@
+{
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+                                                                                
+"features": [
+{ "type": "Feature", "properties": { "Name": "Parking Lot", "Description": "" }, "geometry": { "type": "Point", "coordinates": [ -89.636723282811886, 43.409838294999297, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Parking Lot", "Description": "" }, "geometry": { "type": "Point", "coordinates": [ -89.685805290940721, 43.424622584303862, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Parking Lot", "Description": "" }, "geometry": { "type": "Point", "coordinates": [ -89.710772818189398, 43.410817788028197, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Parking Lot", "Description": "" }, "geometry": { "type": "Point", "coordinates": [ -89.726647029408852, 43.407950584427553, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Parking Lot", "Description": "" }, "geometry": { "type": "Point", "coordinates": [ -89.739447500577199, 43.412308011087767, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Parking Lot", "Description": "" }, "geometry": { "type": "Point", "coordinates": [ -89.727137743736577, 43.428719930583419, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Parking Lot", "Description": "" }, "geometry": { "type": "Point", "coordinates": [ -89.73132018849374, 43.428887824055927, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Parking Lot ", "Description": "" }, "geometry": { "type": "Point", "coordinates": [ -89.72998844788863, 43.42815719240906, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Parking Lot", "Description": "" }, "geometry": { "type": "Point", "coordinates": [ -89.728941539626845, 43.428695881616051, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Parking Lot", "Description": "" }, "geometry": { "type": "Point", "coordinates": [ -89.726842830508176, 43.425495881187651, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Parking Lot", "Description": "" }, "geometry": { "type": "Point", "coordinates": [ -89.727187943180013, 43.427657652219821, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Parking Lot", "Description": "" }, "geometry": { "type": "Point", "coordinates": [ -89.728706123198606, 43.42657204817489, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Parking Lot", "Description": "" }, "geometry": { "type": "Point", "coordinates": [ -89.735725420653139, 43.429018725066769, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Parking Lot", "Description": "" }, "geometry": { "type": "Point", "coordinates": [ -89.724688321944029, 43.409917266695643, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Parking Lot", "Description": "" }, "geometry": { "type": "Point", "coordinates": [ -89.725350749589524, 43.408652982957122, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Parking Lot", "Description": "" }, "geometry": { "type": "Point", "coordinates": [ -89.724076064117853, 43.410876872136242, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Parking Lot", "Description": "" }, "geometry": { "type": "Point", "coordinates": [ -89.709931971781657, 43.430602472002263, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Parking Lot ", "Description": "" }, "geometry": { "type": "Point", "coordinates": [ -89.675642692813994, 43.405711537750292, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Parking Lot", "Description": "" }, "geometry": { "type": "Point", "coordinates": [ -89.66053569150958, 43.420181802865578, 0.0 ] } }
+]
+}

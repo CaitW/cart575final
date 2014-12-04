@@ -1,0 +1,9 @@
+{
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+                                                                                
+"features": [
+{ "type": "Feature", "properties": { "Name": "Boat Launch", "Description": "" }, "geometry": { "type": "Point", "coordinates": [ -89.731079443424633, 43.427328965887412, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Boat Launch", "Description": "" }, "geometry": { "type": "Point", "coordinates": [ -89.737643140530977, 43.412654805200383, 0.0 ] } }
+]
+}
