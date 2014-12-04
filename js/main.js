@@ -41,7 +41,7 @@ $(document).ready(function () {
 	$.getJSON("data/buildings.json", function (data) {
 		var style = {
 			"color": "#7e7e7e",
-		    "weight": 4,
+		    "weight": 0,
 		    "opacity": 0.8
 		};
 		layers["Buildings"] = L.geoJson(data, {
