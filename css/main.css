@@ -80,7 +80,7 @@ textarea {
    ========================================================================== */
 html, body {
   height: 100%;
-  font-family: "Open Sans"; }
+  font-family: "Source Sans Pro"; }
 
 #map {
   height: 100%; }
@@ -91,7 +91,7 @@ html, body {
       content: "Legend"; }
 
 .leaflet-container {
-  font: 1.3vh "Source Sans Pro", Helvetica, sans-serif; }
+  font: 1.7vh "Source Sans Pro", Helvetica, sans-serif; }
 
 .historicalPoints {
   height: 0.6vw !important;
@@ -134,7 +134,8 @@ nav:hover #nav-content {
   bottom: 1vh;
   right: 1vh;
   width: 20;
-  background-color: red;
+  color: white;
+  background-color: #856363;
   padding: 1vh; }
   #legend #legendChevron {
     float: right;
