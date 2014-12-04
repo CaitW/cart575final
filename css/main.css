@@ -241,7 +241,7 @@ h3 {
 	width: 88%;
 	margin-left: 6%;
 	display: block;
-	height: 30%;
+	padding: 1vh;
 	font-family: "Source Sans Pro";
 	font-weight: bold;
 	font-size: 2vw;
@@ -253,10 +253,10 @@ h3 {
 	display: block;
 	width: 88%;
 	margin-left: 6%;
-	height: 70%;
 	font-family: "Source Sans Pro";
 	font-size: 1vw;
 	color: #ccc;
+	padding: 1vh;
 }
 
 /* ==========================================================================
