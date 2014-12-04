@@ -83,7 +83,13 @@ html, body {
   font-family: "Source Sans Pro"; }
 
 #map {
-  height: 100%; }
+  height: 70%;
+  position: absolute;
+  top: 0;
+	left: 0;
+	right: 0;
+
+   }
   #map .leaflet-control-layers .leaflet-control-layers-toggle {
     width: auto;
     height: auto; }
@@ -142,6 +148,7 @@ nav:hover #nav-content {
   background-color: blue; }
 
 #legend {
+	display: none; /* temporary */
   position: absolute;
   bottom: 1vh;
   right: 1vh;
@@ -175,6 +182,60 @@ h3 {
   font-color: #666666;
   font-variant: small-caps; /* not 100% set on this */
   margin-bottom: 0.01vw;
+}
+
+#bar
+{
+	height: 30%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: #333;
+	/*
+	background-image:url('../img/barImages/IMG_1250.png');
+	background-repeat:no-repeat;
+	background-position: left 20%;
+	background-size: 100% auto;
+	*/
+	
+}
+
+#bar #leftScroll, #bar #rightScroll
+{
+	display: none;
+	position: absolute;
+	font-size: 4vw;
+	height: 100%;
+}
+
+#leftScroll 
+{
+	top: 0;
+	left: 2%;
+}
+
+#rightScroll 
+{
+	top: 0;
+	right: 2%;
+}
+
+#leftScroll i, #rightScroll i
+{
+	
+	
+}
+
+#leftScroll i:hover, #rightScroll i:hover
+{
+	cursor: pointer;
+	color: #ccc;
+}
+
+#bar:hover  #leftScroll, #bar:hover #rightScroll
+{
+	display: block;
 }
 
 /* ==========================================================================

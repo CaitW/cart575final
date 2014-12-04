@@ -77,6 +77,7 @@ $(document).ready(function () {
 		$(document).trigger("layeradd", [layers["Campsites"], "Campsites"]);
 	});
 
+/*
 	$.getJSON("data/bluffs.json", function (data) {
 		var style = {
 			"color": "#000000",
@@ -89,6 +90,7 @@ $(document).ready(function () {
 	}).complete(function() {
 		$(document).trigger("layeradd", [layers["Bluffs"], "Bluffs"]);
 	});
+*/
 
 	////////////
 	// Points //
