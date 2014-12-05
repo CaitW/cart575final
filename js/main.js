@@ -1,9 +1,12 @@
 
 var map;
 var layers;
+var infoBarSlideNumber = 0;
 
 
 $(document).ready(function () {
+
+
 
 	map = L.map('map', {
 		zoomControl: false
@@ -239,6 +242,24 @@ $(document).ready(function () {
 	$(document).on("click","#legendChevron.fa-chevron-up", function () {
 		$("#legendContent").hide();
 		$("#legendChevron.fa-chevron-up").removeClass("fa-chevron-up").addClass("fa-chevron-down");
+	});
+
+	$(document).on("click", "#rightScroll i", function () {
+		infoBarSlideNumber++;
+
+		$("#barHeader, #barBody").toggle("slide", "left", 100, function ()
+			{
+				
+			});
+
+		$("#barHeader, #barBody").promise().done(function () {
+			$("#barHeader").html(slides[infoBarSlideNumber].title);
+			$("#barBody").html(slides[infoBarSlideNumber].body);
+			$("#barHeader, #barBody").effect("slide", {direction: "right", mode:"show"}, 200);
+		});
+
+
+
 	});
 
 });

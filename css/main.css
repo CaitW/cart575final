@@ -186,6 +186,7 @@ h3 {
 
 #bar
 {
+  display: inline-block;
 	height: 30%;
 	position: absolute;
 	bottom: 0;
@@ -200,6 +201,9 @@ h3 {
 	*/
 	
 }
+
+
+
 
 #leftScroll, #rightScroll
 {
@@ -220,9 +224,9 @@ h3 {
 	right: 2%;
 }
 
-#leftScroll i, #rightScroll i
+#leftScroll i
 {
-	
+	display: none;
 }
 
 #leftScroll i:hover, #rightScroll i:hover
@@ -238,7 +242,7 @@ h3 {
 
 #barHeader
 {
-	width: 88%;
+	width: 86%;
 	margin-left: 6%;
 	display: block;
 	padding: 1vh;
@@ -251,12 +255,18 @@ h3 {
 #barBody
 {
 	display: block;
-	width: 88%;
+	width: 86%;
 	margin-left: 6%;
 	font-family: "Source Sans Pro";
 	font-size: 1vw;
 	color: #ccc;
 	padding: 1vh;
+}
+
+#logoBox img
+{
+  height: 8vw;
+  width: 8vw;
 }
 
 /* ==========================================================================
