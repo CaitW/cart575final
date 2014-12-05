@@ -6,7 +6,8 @@ var infoBarSlideNumber = 0;
 
 $(document).ready(function () {
 
-
+	$("#barHeader").html(slides[0].title);
+	$("#barBody").html(slides[0].body);
 
 	map = L.map('map', {
 		zoomControl: false
@@ -245,7 +246,14 @@ $(document).ready(function () {
 	});
 
 	$(document).on("click", "#rightScroll i", function () {
+		
 		infoBarSlideNumber++;
+
+		if(infoBarSlideNumber == slides.length)
+		{
+			infoBarSlideNumber = 0;
+		}
+
 
 		$("#barHeader, #barBody").toggle("slide", "left", 100, function ()
 			{
