@@ -224,11 +224,6 @@ h3 {
 	right: 2%;
 }
 
-#leftScroll i
-{
-	display: none;
-}
-
 #leftScroll i:hover, #rightScroll i:hover
 {
 	cursor: pointer;

@@ -36,6 +36,58 @@ $(document).ready(function () {
 		$("#legendContent").append("<div class='legendItem'><input type='checkbox' class='legendCheckbox' value='" + layerName + "' checked>" + layerName + "</div>");
 	});
 
+	$(document).on("slideChange", function (e, slideId) {
+
+		$.each(layers, function (key, value)
+		{
+			map.removeLayer(layers[key]);
+		});
+
+		// to do: zoom out to bounding box
+
+		switch (slideId) {
+
+			case "welcome":
+				layers["Trails"].addTo(map);
+				layers["Campsites"].addTo(map);
+				layers["Campsite Centerpoints"].addTo(map);
+				layers["Restrooms"].addTo(map);
+				layers["Shelters"].addTo(map);
+				layers["Buildings"].addTo(map);
+				layers["Boat Launches"].addTo(map);
+				layers["Parking Lots"].addTo(map);
+			break;
+
+			case "history":
+				layers["Trails"].addTo(map);
+				layers["Buildings"].addTo(map);
+				layers["Parking Lots"].addTo(map);
+				layers["Historical Points"].addTo(map);
+			break;
+
+			case "nativeamerican":
+				layers["Trails"].addTo(map);
+			break;
+			
+			case "geology":
+				layers["Trails"].addTo(map);
+				layers["Points of Interest"].addTo(map);
+			break;
+
+			case "trails":
+				// to do: style trails differently - make more prominent, add labels at higher zoom
+				layers["Trails"].addTo(map);
+			break;
+
+			case "fishing":
+				layers["Boat Launches"].addTo(map);
+			break;
+
+		}
+
+
+	});
+
 	$(document).on("change", ".legendCheckbox", function (e) {
 		if($(this).prop("checked"))
 		{
@@ -50,6 +102,10 @@ $(document).ready(function () {
 	});
 
 	// add all our data
+	// default layers added to map on load:
+	// Trails, campsites, bathrooms, shelters, campsites, buildings, boat launches
+	// layers not shown on load, but shown later:
+	// points of interest (?), history points, mounds, bluffs
 
 	//////////////
 	// Polygons //
@@ -81,21 +137,6 @@ $(document).ready(function () {
 		$(document).trigger("layeradd", [layers["Campsites"], "Campsites"]);
 	});
 
-/*
-	$.getJSON("data/bluffs.json", function (data) {
-		var style = {
-			"color": "#000000",
-		    "weight": 0,
-		    "opacity": 0.65
-		};
-		layers["Bluffs"] = L.geoJson(data, { 
-			style: style
-		}).addTo(map);
-	}).complete(function() {
-		$(document).trigger("layeradd", [layers["Bluffs"], "Bluffs"]);
-	});
-*/
-
 	////////////
 	// Points //
 	////////////
@@ -126,7 +167,7 @@ $(document).ready(function () {
 			onEachFeature: function(feature, layer) {
 				layer.bindPopup("<center><h3>" + feature.properties.Name + "</h3><br>" + feature.properties.Description + "</center>");
 			}
-		}).addTo(map);
+		});
 	}).complete(function() {
 		$(document).trigger("layeradd", [layers["Historical Points"], "Historical Points"]);
 	});
@@ -143,7 +184,7 @@ $(document).ready(function () {
 			onEachFeature: function(feature, layer) {
 				layer.bindPopup("<center><h3>" + feature.properties.Name + "</h3></center>");
 			}
-		}).addTo(map);
+		});
 	}).complete(function() {
 		$(document).trigger("layeradd", [layers["Points of Interest"], "Points of Interest"]);
 	});
@@ -233,8 +274,6 @@ $(document).ready(function () {
 		$(document).trigger("layeradd", [layers["Trails"], "Trails"]);
 	});
 
-
-
 	$(document).on("click","#legendChevron.fa-chevron-down", function () {
 		$("#legendContent").show();
 		$("#legendChevron.fa-chevron-down").removeClass("fa-chevron-down").addClass("fa-chevron-up");
@@ -266,8 +305,32 @@ $(document).ready(function () {
 			$("#barHeader, #barBody").effect("slide", {direction: "right", mode:"show"}, 200);
 		});
 
-
+		$(document).trigger("slideChange", [slides[infoBarSlideNumber].id]);
 
 	});
+
+	$(document).on("click", "#leftScroll i", function () {
+		
+		infoBarSlideNumber--;
+
+		if(infoBarSlideNumber == -1)
+		{
+			infoBarSlideNumber = slides.length - 1;
+		}
+
+
+		$("#barHeader, #barBody").effect("slide", {direction: "right", mode:"hide"}, 100);
+
+
+		$("#barHeader, #barBody").promise().done(function () {
+			$("#barHeader").html(slides[infoBarSlideNumber].title);
+			$("#barBody").html(slides[infoBarSlideNumber].body);
+			$("#barHeader, #barBody").effect("slide", {direction: "left", mode:"show"}, 200);
+		});
+
+		$(document).trigger("slideChange", [slides[infoBarSlideNumber].id]);
+
+	});
+
 
 });
