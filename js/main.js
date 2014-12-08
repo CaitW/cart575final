@@ -9,13 +9,9 @@ $(document).ready(function () {
 	$("#barHeader").html(slides[0].title);
 	$("#barBody").html(slides[0].body);
 
-	var defaultBbox = [[43.4375580436,-89.7041416168],[43.4023037086,-89.758644104]];
-
 	map = L.map('map', {
 		zoomControl: false
 	}).setView([43.4180,-89.7297], 14);
-
-	map.fitBounds(defaultBbox);
 
 	var zoomControl = new L.control.zoom({position: "topright"}).addTo(map);
 
@@ -23,16 +19,12 @@ $(document).ready(function () {
 
 	// hillshade
 	L.tileLayer('https://a.tiles.mapbox.com/v4/nps.a6be40f0/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibnBzIiwiYSI6Ik5yOFVUR2sifQ.lcpvx7UEgHGoeObibjqMBw').addTo(map);
-
-	// alternative, more detailed hillshade. potential to add this when displaying geography layer
-	//L.esri.tiledMapLayer('http://basemap.nationalmap.gov/arcgis/rest/services/USGSShadedReliefOnly/MapServer').setOpacity(0.5).addTo(map);
-
 	// park boundaries
 	L.tileLayer('data/custom-tiles/parksBoundaries/{z}/{x}/{y}.png').addTo(map);
 	//water
 	L.tileLayer('https://a.tiles.mapbox.com/v4/nps.a706dc69/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibnBzIiwiYSI6Ik5yOFVUR2sifQ.lcpvx7UEgHGoeObibjqMBw').addTo(map);
 	// roads, trails
-	L.tileLayer('https://a.tiles.mapbox.com/v4/nps.8eb491cc/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibnBzIiwiYSI6Ik5yOFVUR2sifQ.lcpvx7UEgHGoeObibjqMBw').setOpacity(0.8).addTo(map);
+	L.tileLayer('https://a.tiles.mapbox.com/v4/nps.8eb491cc/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibnBzIiwiYSI6Ik5yOFVUR2sifQ.lcpvx7UEgHGoeObibjqMBw').addTo(map);
 	// labels
 	L.tileLayer('https://a.tiles.mapbox.com/v4/nps.5dfeaf68/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibnBzIiwiYSI6Ik5yOFVUR2sifQ.lcpvx7UEgHGoeObibjqMBw').addTo(map);
 
@@ -56,7 +48,6 @@ $(document).ready(function () {
 		switch (slideId) {
 
 			case "welcome":
-				map.fitBounds(defaultBbox);
 				layers["Trails"].addTo(map);
 				layers["Campsites"].addTo(map);
 				layers["Campsite Centerpoints"].addTo(map);
@@ -68,7 +59,6 @@ $(document).ready(function () {
 			break;
 
 			case "history":
-				map.fitBounds(defaultBbox);
 				layers["Trails"].addTo(map);
 				layers["Buildings"].addTo(map);
 				layers["Parking Lots"].addTo(map);
@@ -76,26 +66,21 @@ $(document).ready(function () {
 			break;
 
 			case "nativeamerican":
-				map.fitBounds(defaultBbox);
 				layers["Trails"].addTo(map);
 			break;
 			
 			case "geology":
-				map.fitBounds(defaultBbox);
 				layers["Trails"].addTo(map);
 				layers["Points of Interest"].addTo(map);
 			break;
 
 			case "trails":
-				map.fitBounds(defaultBbox);
 				// to do: style trails differently - make more prominent, add labels at higher zoom
 				layers["Trails"].addTo(map);
 			break;
 
 			case "fishing":
-				map.fitBounds(defaultBbox);
 				layers["Boat Launches"].addTo(map);
-				map.fitBounds([[43.4277100925, -89.7249126434],[43.4077287885, -89.7392463684]]);
 			break;
 
 		}
@@ -139,7 +124,7 @@ $(document).ready(function () {
 		$(document).trigger("layeradd", [layers["Buildings"], "Buildings"]);
 	});
 
-	$.getJSON("data/campsiteOutlines.json", function (data) {
+	$.getJSON("data/campsites.json", function (data) {
 		var style = {
 			"color": "#333333",
 		    "weight": 0,
@@ -161,7 +146,7 @@ $(document).ready(function () {
 			pointToLayer: function (feature, latlng) {
 				var marker = L.divIcon({
 					className: "boatLaunches",
-					html: "<img src='img/boat-launch.svg'>"
+					//html: "<img src='img/historical-points.svg'>"
 				});
 				return L.marker(latlng, {icon: marker})
 			}
@@ -226,7 +211,7 @@ $(document).ready(function () {
 			pointToLayer: function (feature, latlng) {
 				var marker = L.divIcon({
 					className: "shelters",
-					html: "<img src='img/shelter-1.svg'>"
+					html: "<img src='img/shelters.svg'>"
 				});
 				return L.marker(latlng, {icon: marker})
 			}
@@ -254,7 +239,7 @@ $(document).ready(function () {
 			pointToLayer: function (feature, latlng) {
 				var marker = L.divIcon({
 					className: "restrooms",
-					html: "<img src='img/restrooms.svg'>"
+					//html: "<img src='img/shelters.svg'>"
 				});
 				return L.marker(latlng, {icon: marker})
 			}

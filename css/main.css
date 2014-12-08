@@ -207,6 +207,7 @@ h3 {
 
 #leftScroll, #rightScroll
 {
+	display: none;
 	position: absolute;
 	font-size: 4vw;
 }
@@ -227,6 +228,11 @@ h3 {
 {
 	cursor: pointer;
 	color: #ccc;
+}
+
+#bar:hover  #leftScroll, #bar:hover #rightScroll
+{
+	display: block;
 }
 
 #barHeader
