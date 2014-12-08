@@ -177,10 +177,10 @@ nav:hover #nav-content {
 
 h3 {
   font-family: "Source Sans Pro";
-  font-size: 1.5vw;
+  font-size: 1.3vw;
   font-weight: bolder;
   font-color: #666666;
-  font-variant: small-caps; /* not 100% set on this */
+  /* font-variant: small-caps; not 100% set on this */
   margin-bottom: 0.01vw;
 }
 

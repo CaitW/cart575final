@@ -256,7 +256,7 @@ $(document).ready(function () {
 
 		var style = {
 			"color": "#856363",
-		    "weight": 0.75,
+		    "weight": 0.9,
 		    "opacity": 0.65
 		};
 		layers["Trails"] = L.geoJson(data, {
