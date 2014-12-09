@@ -165,7 +165,7 @@ $(document).ready(function () {
 			pointToLayer: function (feature, latlng) {
 				var marker = L.divIcon({
 					className: "boatLaunches",
-					html: "<img src='img/boat-launch.svg' width='30' height='20'>" // I do think these should be static sizes---the vh makes them too responsive + small on other screens. can edit in CSS>
+					html: "<img src='img/boat-launch.svg'>" // I do think these should be static sizes---the vh makes them too responsive + small on other screens. can edit in CSS>
 				});
 				return L.marker(latlng, {icon: marker})
 			}
@@ -213,7 +213,7 @@ $(document).ready(function () {
 			pointToLayer: function (feature, latlng) {
 				var marker = L.divIcon({
 					className: "campsiteCenterpoints",
-					html: "<img src='img/campsites.svg' width='15' height='15'>"
+					html: "<img src='img/campsites.svg'>"
 				});
 				return L.marker(latlng, {icon: marker})
 			},
@@ -230,7 +230,7 @@ $(document).ready(function () {
 			pointToLayer: function (feature, latlng) {
 				var marker = L.divIcon({
 					className: "shelters",
-					html: "<img src='img/shelter-1.svg' width='15' height='15'>"
+					html: "<img src='img/shelter-1.svg'>"
 				});
 				return L.marker(latlng, {icon: marker})
 			}
@@ -258,7 +258,7 @@ $(document).ready(function () {
 			pointToLayer: function (feature, latlng) {
 				var marker = L.divIcon({
 					className: "restrooms",
-					html: "<img src='img/restrooms.svg' width='15' height='30'>"
+					html: "<img src='img/restrooms.svg'>"
 				});
 				return L.marker(latlng, {icon: marker})
 			}
