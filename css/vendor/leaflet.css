@@ -199,6 +199,7 @@
 /* general typography */
 .leaflet-container {
 	font: 12px "Source Sans Pro", Helvetica, sans-serif;
+	margin-top: 1px;
 }
 
 
