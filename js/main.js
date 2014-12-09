@@ -12,7 +12,8 @@ $(document).ready(function () {
 	var defaultBbox = [[43.4375580436,-89.7041416168],[43.4023037086,-89.758644104]];
 
 	map = L.map('map', {
-		zoomControl: false
+		zoomControl: false,
+		maxBounds: [[43.45503732537239,-89.6070671081543], [43.37311218382002,-89.8267936706543]]
 	}).setView([43.4180,-89.7297], 14);
 
 	map.fitBounds(defaultBbox);
@@ -276,8 +277,17 @@ $(document).ready(function () {
 			"color": "#856363",
 		    "weight": 0.9,
 		    "opacity": 0.65
-		};
+		}
 		layers["Trails"] = L.geoJson(data, {
+			style: style
+		}).addTo(map);
+
+		style = {
+			"color": "#856363",
+		    "weight": 10,
+		    "opacity": 0.01
+		};
+		layers["Trails Hover"] = L.geoJson(data, {
 			className: "trails",
 			style: style,
 			onEachFeature: function (feature, layer) {
@@ -287,6 +297,8 @@ $(document).ready(function () {
 				}
 			}
 		}).addTo(map);
+
+
 
 	}).complete(function() {
 		$(document).trigger("layeradd", [layers["Trails"], "Trails"]);
