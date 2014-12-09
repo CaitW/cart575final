@@ -25,10 +25,13 @@ $(document).ready(function () {
 	L.tileLayer('https://a.tiles.mapbox.com/v4/nps.a6be40f0/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibnBzIiwiYSI6Ik5yOFVUR2sifQ.lcpvx7UEgHGoeObibjqMBw').addTo(map);
 
 	// alternative, more detailed hillshade. potential to add this when displaying geography layer
-	//L.esri.tiledMapLayer('http://basemap.nationalmap.gov/arcgis/rest/services/USGSShadedReliefOnly/MapServer').setOpacity(0.5).addTo(map);
+	//L.esri.tiledMapLayer('http://basemap.nationalmap.gov/arcgis/rest/services/USGSShadedReliefOnly/MapServer').setOpacity(0.3).addTo(map);
 
 	// park boundaries
-	L.tileLayer('data/custom-tiles/parksBoundaries/{z}/{x}/{y}.png').addTo(map);
+	L.tileLayer('data/custom-tiles/parksBoundaries/{z}/{x}/{y}.png', {
+		bounds: [[43.3434,-89.8143],[43.4838,-89.5938]]
+	}).addTo(map);
+
 	//water
 	L.tileLayer('https://a.tiles.mapbox.com/v4/nps.a706dc69/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibnBzIiwiYSI6Ik5yOFVUR2sifQ.lcpvx7UEgHGoeObibjqMBw').addTo(map);
 	// roads, trails
