@@ -80,7 +80,7 @@ textarea {
    ========================================================================== */
 html, body {
   height: 100%;
-  font-family: "Source Sans Pro"
+  font-family: lighter 1vw "Source Sans Pro"
   display: inline-block; }
 
 #map {
@@ -96,9 +96,6 @@ html, body {
     height: auto; }
     #map .leaflet-control-layers .leaflet-control-layers-toggle a {
       content: "Legend"; }
-
-.leaflet-container {
-  font: 1.7vh "Source Sans Pro", Helvetica, sans-serif; }
 
 .historicalPoints {
   height: 0.6vw !important;
@@ -177,9 +174,10 @@ nav:hover #nav-content {
         margin-right: 1vw; }
 
 h3 {
-  font: bolder 1.3vw/1.5vw "Source Sans Pro";
+  font: bold 1.5vw/2.5vh "Source Sans Pro";
   font-color: #302013;
   display: inline;
+  padding-top: 5vh;
 }
 
 #bar

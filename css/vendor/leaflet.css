@@ -198,7 +198,7 @@
 
 /* general typography */
 .leaflet-container {
-	font: 12px "Source Sans Pro", Helvetica, sans-serif;
+	font: 1vw "Source Sans Pro", Helvetica, sans-serif;
 	font-weight: lighter;
 	color: #302013;
 }
@@ -390,7 +390,7 @@
 	text-align: center;
 	}
 .leaflet-popup-content-wrapper {
-	padding: 1px;
+	padding: 1.4vh;
 	text-align: left;
 	border-radius: 12px;
 	}
