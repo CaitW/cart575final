@@ -406,3 +406,26 @@ h3 {
   h2,
   h3 {
     page-break-after: avoid; } }
+
+
+/* desktop query
+
+@media screen and (max-width: 1024px) {
+
+} */
+
+/* tablet query 
+
+@media screen and (device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) {
+
+} 
+
+*/
+
+/* mobile query
+
+ @media screen and (device-aspect-ratio: 40/71) {
+
+}
+
+*/
