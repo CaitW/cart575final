@@ -191,15 +191,16 @@
 	outline: 2px solid gray;
 	}
 .leaflet-zoom-box {
-	border: 2px dotted #38f;
-	background: rgba(255,255,255,0.5);
+	border: 0.5px dotted #38f;
+	background: #DCD7D0;
 	}
 
 
 /* general typography */
 .leaflet-container {
 	font: 12px "Source Sans Pro", Helvetica, sans-serif;
-	margin-top: 1px;
+	font-weight: lighter;
+	color: #302013;
 }
 
 

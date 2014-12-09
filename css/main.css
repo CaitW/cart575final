@@ -80,7 +80,8 @@ textarea {
    ========================================================================== */
 html, body {
   height: 100%;
-  font-family: "Source Sans Pro"; }
+  font-family: "Source Sans Pro"
+  display: inline-block; }
 
 #map {
   height: 70%;
@@ -176,12 +177,9 @@ nav:hover #nav-content {
         margin-right: 1vw; }
 
 h3 {
-  font-family: "Source Sans Pro";
-  font-size: 1.3vw;
-  font-weight: bolder;
-  font-color: #666666;
-  /* font-variant: small-caps; not 100% set on this */
-  margin-bottom: 0.01vw;
+  font: bolder 1.3vw/1.5vw "Source Sans Pro";
+  font-color: #302013;
+  display: inline;
 }
 
 #bar
