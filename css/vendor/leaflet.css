@@ -424,7 +424,7 @@
 .leaflet-popup-content-wrapper,
 .leaflet-popup-tip {
 	background: #EBE8E5;
-	border: 0.5px solid #d3d3d3;
+	border: 0px solid #d3d3d3;
 	}
 .leaflet-container a.leaflet-popup-close-button {
 	position: absolute;
