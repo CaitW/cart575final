@@ -164,7 +164,7 @@ $(document).ready(function () {
 			pointToLayer: function (feature, latlng) {
 				var marker = L.divIcon({
 					className: "boatLaunches",
-					html: "<img src='img/boat-launch.svg' width='30' height='20'>"
+					html: "<img src='img/boat-launch.svg' width='30' height='20'>" // I do think these should be static sizes---the vh makes them too responsive + small on other screens. can edit in CSS>
 				});
 				return L.marker(latlng, {icon: marker})
 			}
