@@ -199,6 +199,7 @@
 /* general typography */
 .leaflet-container {
 	font: 12px "Source Sans Pro", Helvetica, sans-serif;
+	margin-top: 1px;
 }
 
 
@@ -422,8 +423,7 @@
 .leaflet-popup-content-wrapper,
 .leaflet-popup-tip {
 	background: #EBE8E5;
-
-	box-shadow: 0 3px 14px rgba(0,0,0,0.4);
+	border: 0.5px solid #d3d3d3;
 	}
 .leaflet-container a.leaflet-popup-close-button {
 	position: absolute;
