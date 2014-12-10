@@ -157,30 +157,40 @@ nav:hover #nav-content {
   background-color: blue; }
 
 #legend {
-	display: none; /* temporary */
   position: absolute;
-  bottom: 1vh;
-  right: 1vh;
-  width: 20;
+  bottom: 30%;
+  right: 3%;
   color: white;
   background-color: #856363;
-  padding: 1vh; }
+  padding: 0.7vh; 
+  margin-bottom: 1vh;}
+  #legend img
+  {
+    height: 1vw;
+    width: 1vw;
+    margin-right: 0.5vw;
+    background-color: white;
+    padding: 0.1vw;
+    border-radius: 1vw;
+  }
   #legend #legendChevron {
     float: right;
-    font-size: 150%;
-    margin-left: 2vw;
+    font-size: 100%;
+    margin-left: 1vw;
     line-height: inherit; }
     #legend #legendChevron:hover {
       cursor: pointer; }
   #legend #legendHeader {
     font-weight: bold;
-    font-size: 150%; }
+    font-size: 100%; }
   #legend #legendContent {
     display: none;
     padding-top: 0.5vh; }
     #legend #legendContent .legendItem {
-      padding-left: 1vw;
-      font-size: 120%; }
+      display: none;
+      padding-left: 0.5vw;
+      font-size: 80%;
+      padding-bottom: 0.4vh; }
       #legend #legendContent .legendItem .legendCheckbox {
         margin-right: 1vw; }
 
@@ -208,9 +218,6 @@ h3 {
 	*/
 	
 }
-
-
-
 
 #leftScroll, #rightScroll
 {

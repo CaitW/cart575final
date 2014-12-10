@@ -44,8 +44,20 @@ $(document).ready(function () {
 	layers = {};
 
 
-	$(document).on("layeradd", function (e, layer, layerName) {
-		$("#legendContent").append("<div class='legendItem'><input type='checkbox' class='legendCheckbox' value='" + layerName + "' checked>" + layerName + "</div>");
+	$(document).on("layeradd", function (e, layer, layerName, addToLegend, layerIcon) {
+
+		if(addToLegend == true)
+		{
+			if(layerIcon)
+			{
+				$("#legendContent").append("<div class='legendItem' name='" + layerName + "'><img src='" + layerIcon + "'>" + layerName + "</div>");
+			}
+			else
+			{
+				$("#legendContent").append("<div class='legendItem'>" + layerName + "</div>");
+			}
+			
+		}
 	});
 
 	$(document).on("slideChange", function (e, slideId) {
@@ -55,38 +67,68 @@ $(document).ready(function () {
 			map.removeLayer(layers[key]);
 		});
 
+		$(".legendItem").hide();
+
 		// to do: zoom out to bounding box
 
 		switch (slideId) {
 
 			case "welcome":
 				map.fitBounds(defaultBbox);
+
 				layers["Trails"].addTo(map);
+					$(".legendItem[name='Trails'").show();
+
 				layers["Campsites"].addTo(map);
+					$(".legendItem[name='Campsites'").show();
+
 				layers["Campsite Centerpoints"].addTo(map);
+
 				layers["Restrooms"].addTo(map);
+					$(".legendItem[name='Restrooms'").show();
+
 				layers["Shelters"].addTo(map);
+					$(".legendItem[name='Shelters'").show();
+
 				layers["Buildings"].addTo(map);
+					$(".legendItem[name='Buildings'").show();
+
 				layers["Boat Launches"].addTo(map);
+					$(".legendItem[name='Boat Launches'").show();
+
 				layers["Parking Lots"].addTo(map);
+					$(".legendItem[name='Parking Lots'").show();
 			break;
 
 			case "history":
 				map.fitBounds(defaultBbox);
+
 				layers["Trails"].addTo(map);
+					$(".legendItem[name='Trails'").show();
+
 				layers["Buildings"].addTo(map);
+					$(".legendItem[name='Buildings'").show();
+
 				layers["Parking Lots"].addTo(map);
+					$(".legendItem[name='Parking Lots'").show();
+
 				layers["Historical Points"].addTo(map);
+					$(".legendItem[name='Historical Points'").show();
 			break;
 
 			case "nativeamerican":
 				map.fitBounds(defaultBbox);
+
 				layers["Trails"].addTo(map);
+					$(".legendItem[name='Trails'").show();
 			break;
 			
 			case "geology":
 				map.fitBounds(defaultBbox);
+
 				layers["Trails"].addTo(map);
+					$(".legendItem[name='Trails'").show();
+
 				layers["Points of Interest"].addTo(map);
 			break;
 
@@ -94,30 +136,21 @@ $(document).ready(function () {
 				map.fitBounds(defaultBbox);
 				// to do: style trails differently - make more prominent, add labels at higher zoom
 				layers["Trails"].addTo(map);
+					$(".legendItem[name='Trails'").show();
 			break;
 
 			case "fishing":
-				map.fitBounds(defaultBbox);
-				layers["Boat Launches"].addTo(map);
 				map.fitBounds([[43.4277100925, -89.7249126434],[43.4077287885, -89.7392463684]]);
+				
+				layers["Boat Launches"].addTo(map);
+					$(".legendItem[name='Boat Launches'").show();
+
+				
 			break;
 
 		}
 
 
-	});
-
-	$(document).on("change", ".legendCheckbox", function (e) {
-		if($(this).prop("checked"))
-		{
-			var layerName = $(this).val();
-			map.addLayer(layers[layerName]);
-		}
-		else
-		{
-			var layerName = $(this).val();
-			map.removeLayer(layers[layerName]);
-		}
 	});
 
 	// add all our data
@@ -140,7 +173,7 @@ $(document).ready(function () {
 			style: style
 		}).addTo(map);
 	}).complete(function() {
-		$(document).trigger("layeradd", [layers["Buildings"], "Buildings"]);
+		$(document).trigger("layeradd", [layers["Buildings"], "Buildings", true]);
 	});
 
 	$.getJSON("data/campsiteOutlines.json", function (data) {
@@ -151,9 +184,9 @@ $(document).ready(function () {
 		};
 		layers["Campsites"] = L.geoJson(data, { 
 			style: style
-		}).addTo(map);
+		});
 	}).complete(function() {
-		$(document).trigger("layeradd", [layers["Campsites"], "Campsites"]);
+		$(document).trigger("layeradd", [layers["Campsites"], "Campsites", false]);
 	});
 
 	////////////
@@ -169,9 +202,9 @@ $(document).ready(function () {
 				});
 				return L.marker(latlng, {icon: marker})
 			}
-		}).addTo(map);
+		});
 	}).complete(function() {
-		$(document).trigger("layeradd", [layers["Boat Launches"], "Boat Launches"]);
+		$(document).trigger("layeradd", [layers["Boat Launches"], "Boat Launches", true, 'img/boat-launch.svg']);
 	});
 
 	$.getJSON("data/historicalPoints.json", function (data) {
@@ -188,7 +221,7 @@ $(document).ready(function () {
 			}
 		});
 	}).complete(function() {
-		$(document).trigger("layeradd", [layers["Historical Points"], "Historical Points"]);
+		$(document).trigger("layeradd", [layers["Historical Points"], "Historical Points", true, 'img/historical-points.svg']);
 	});
 
 	$.getJSON("data/pointsOfInterest.json", function (data) {
@@ -205,7 +238,7 @@ $(document).ready(function () {
 			}
 		});
 	}).complete(function() {
-		$(document).trigger("layeradd", [layers["Points of Interest"], "Points of Interest"]);
+		$(document).trigger("layeradd", [layers["Points of Interest"], "Points of Interest", true, 'img/points-of-interest.svg']);
 	});
 
 	$.getJSON("data/campsiteCenterpoints.json", function (data) {
@@ -220,9 +253,9 @@ $(document).ready(function () {
 			onEachFeature: function(feature, layer) {
 				layer.bindPopup("<center><h3>" + feature.properties.Name + "</h3></center>");
 			}
-		}).addTo(map);
+		});
 	}).complete(function() {
-		$(document).trigger("layeradd", [layers["Campsite Centerpoints"], "Campsite Centerpoints"]);
+		$(document).trigger("layeradd", [layers["Campsite Centerpoints"], "Campsite Centerpoints", true, 'img/campsites.svg']);
 	});
 
 	$.getJSON("data/shelters.json", function (data) {
@@ -234,9 +267,9 @@ $(document).ready(function () {
 				});
 				return L.marker(latlng, {icon: marker})
 			}
-		}).addTo(map);
+		});
 	}).complete(function() {
-		$(document).trigger("layeradd", [layers["Shelters"], "Shelters"]);
+		$(document).trigger("layeradd", [layers["Shelters"], "Shelters", true, 'img/shelter-1.svg']);
 	});
 
 	$.getJSON("data/parkingLots.json", function (data) {
@@ -244,13 +277,13 @@ $(document).ready(function () {
 			pointToLayer: function (feature, latlng) {
 				var marker = L.divIcon({
 					className: "parkingLots",
-					//html: "<img src='img/shelters.svg'>"
+					//html: "<img src='img/'>"
 				});
 				return L.marker(latlng, {icon: marker})
 			}
-		}).addTo(map);
+		});
 	}).complete(function() {
-		$(document).trigger("layeradd", [layers["Parking Lots"], "Parking Lots"]);
+		$(document).trigger("layeradd", [layers["Parking Lots"], "Parking Lots", true]);
 	});
 
 	$.getJSON("data/restrooms.json", function (data) {
@@ -262,9 +295,9 @@ $(document).ready(function () {
 				});
 				return L.marker(latlng, {icon: marker})
 			}
-		}).addTo(map);
+		});
 	}).complete(function() {
-		$(document).trigger("layeradd", [layers["Restrooms"], "Restrooms"]);
+		$(document).trigger("layeradd", [layers["Restrooms"], "Restrooms", true, 'img/restrooms.svg']);
 	});
 
 	///////////////
@@ -280,7 +313,7 @@ $(document).ready(function () {
 		}
 		layers["Trails"] = L.geoJson(data, {
 			style: style
-		}).addTo(map);
+		});
 
 		style = {
 			"color": "#856363",
@@ -296,12 +329,10 @@ $(document).ready(function () {
 					layer.bindPopup("<center><h3>" + feature.properties.name + "</center></h3>");
 				}
 			}
-		}).addTo(map);
-
-
+		});
 
 	}).complete(function() {
-		$(document).trigger("layeradd", [layers["Trails"], "Trails"]);
+		$(document).trigger("layeradd", [layers["Trails"], true, "Trails"]);
 	});
 
 	$(document).on("click","#legendChevron.fa-chevron-down", function () {
@@ -362,5 +393,11 @@ $(document).ready(function () {
 
 	});
 
+	
 
+
+});
+
+$(window).load(function() {
+	$(document).trigger("slideChange", "welcome");
 });
