@@ -177,6 +177,11 @@ nav {
   color: #afbca2;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 nav:hover #nav-content {
   display: inline-block;
 
@@ -185,7 +190,7 @@ nav:hover #nav-content {
   margin-left: 1vh;
   margin-top: 0.5vh;
   vertical-align: top;
-   }
+}
 
 #legend {
   position: absolute;
@@ -280,7 +285,7 @@ h3 {
 	margin-left: 6%;
 	display: block;
 	padding: 1vh;
-	font-family: "Source Sans Pro";
+	font-family: "Merriweather";
 	font-weight: bold;
 	font-size: 200%;
 	color: #91968A;
