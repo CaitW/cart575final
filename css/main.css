@@ -28,8 +28,12 @@ body {
   text-shadow: none; }
 
 ::selection {
-  background: #b3d4fc;
+  background: #828D78;
   text-shadow: none; }
+
+::-moz-selection {
+  background: #828D78; /* Gecko Browsers */
+}
 
 /*
  * A better looking default horizontal rule
@@ -112,7 +116,8 @@ body
   height: 0.6vw !important;
   width: 0.6vw !important;
   background-color: #856363;
-  border-radius: 50%; }
+  border-radius: 50%;
+   }
 
 .historicalPoints:hover {
   background-color: black;
@@ -177,11 +182,6 @@ nav {
   color: #afbca2;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
 nav:hover #nav-content {
   display: inline-block;
 
@@ -190,7 +190,7 @@ nav:hover #nav-content {
   margin-left: 1vh;
   margin-top: 0.5vh;
   vertical-align: top;
-}
+   }
 
 #legend {
   position: absolute;
@@ -285,7 +285,7 @@ h3 {
 	margin-left: 6%;
 	display: block;
 	padding: 1vh;
-	font-family: "Merriweather";
+	font-family: "Noticia Text";
 	font-weight: bold;
 	font-size: 200%;
 	color: #91968A;
