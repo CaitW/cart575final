@@ -262,10 +262,12 @@ $(document).ready(function () {
 				pointToLayer: function (feature, latlng) {
 					var marker = L.divIcon({
 						className: "boatLaunches",
-						clickable: false,
 						html: "<img src='img/boat-launch.svg'>" // I do think these should be static sizes---the vh makes them too responsive + small on other screens. can edit in CSS>
 					});
-					return L.marker(latlng, {icon: marker})
+					return L.marker(latlng, {
+						icon: marker,
+						clickable: false
+					})
 				}
 			});
 		}).complete(function() {
@@ -279,7 +281,9 @@ $(document).ready(function () {
 						className: "historicalPoints",
 						//html: "<img src='img/historical-points.svg'>"
 					});
-					return L.marker(latlng, {icon: marker})
+					return L.marker(latlng, {
+						icon: marker
+					})
 				},
 				onEachFeature: function(feature, layer) {
 					layer.bindPopup("<center><h3>" + feature.properties.Name + "</h3><br>" + feature.properties.Description + "</center>");
@@ -296,7 +300,9 @@ $(document).ready(function () {
 						className: "pointsOfInterest",
 						html: "<img src='img/points-of-interest.svg'>"
 					});
-					return L.marker(latlng, {icon: marker})
+					return L.marker(latlng, {
+						icon: marker
+					})
 				},
 				onEachFeature: function(feature, layer) {
 					layer.bindPopup("<center><h3>" + feature.properties.Name + "</h3></center>");
@@ -313,7 +319,9 @@ $(document).ready(function () {
 						className: "campsiteCenterpoints",
 						html: "<img src='img/campsites.svg'>"
 					});
-					return L.marker(latlng, {icon: marker})
+					return L.marker(latlng, {
+						icon: marker
+					})
 				},
 				onEachFeature: function(feature, layer) {
 					layer.bindPopup("<center><h3>" + feature.properties.Name + "</h3></center>");
@@ -328,10 +336,12 @@ $(document).ready(function () {
 				pointToLayer: function (feature, latlng) {
 					var marker = L.divIcon({
 						className: "shelters",
-						clickable: false,
 						html: "<img src='img/shelter-1.svg'>"
 					});
-					return L.marker(latlng, {icon: marker})
+					return L.marker(latlng, {
+						icon: marker, 
+						clickable: false
+					})
 				}
 			});
 		}).complete(function() {
@@ -345,7 +355,9 @@ $(document).ready(function () {
 						className: "parkingLots",
 						//html: "<img src='img/'>"
 					});
-					return L.marker(latlng, {icon: marker})
+					return L.marker(latlng, {
+						icon: marker
+					})
 				}
 			});
 		}).complete(function() {
@@ -357,10 +369,12 @@ $(document).ready(function () {
 				pointToLayer: function (feature, latlng) {
 					var marker = L.divIcon({
 						className: "restrooms",
-						clickable: false,
 						html: "<img src='img/restrooms.svg'>"
 					});
-					return L.marker(latlng, {icon: marker})
+					return L.marker(latlng, {
+						icon: marker, 
+						clickable: false
+					})
 				}
 			});
 		}).complete(function() {
