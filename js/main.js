@@ -61,27 +61,27 @@ $(document).ready(function () {
 
 				layers["Trails"].addTo(map);
 				layers["Trails Hover"].addTo(map);
-					$(".legendItem[name='Trails'").show();
+					$(".legendItem[name='Trails']").show();
 
 				layers["Campsites"].addTo(map);
-					$(".legendItem[name='Campsites'").show();
+					$(".legendItem[name='Campsites']").show();
 
 				layers["Campsite Centerpoints"].addTo(map);
 
 				layers["Restrooms"].addTo(map);
-					$(".legendItem[name='Restrooms'").show();
+					$(".legendItem[name='Restrooms']").show();
 
 				layers["Shelters"].addTo(map);
-					$(".legendItem[name='Shelters'").show();
+					$(".legendItem[name='Shelters']").show();
 
 				layers["Buildings"].addTo(map);
-					$(".legendItem[name='Buildings'").show();
+					$(".legendItem[name='Buildings']").show();
 
 				layers["Boat Launches"].addTo(map);
-					$(".legendItem[name='Boat Launches'").show();
+					$(".legendItem[name='Boat Launches']").show();
 
 				layers["Parking Lots"].addTo(map);
-					$(".legendItem[name='Parking Lots'").show();
+					$(".legendItem[name='Parking Lots']").show();
 			break;
 
 			case "history":
@@ -89,16 +89,16 @@ $(document).ready(function () {
 
 				layers["Trails"].addTo(map);
 				layers["Trails Hover"].addTo(map);
-					$(".legendItem[name='Trails'").show();
+					$(".legendItem[name='Trails']").show();
 
 				layers["Buildings"].addTo(map);
-					$(".legendItem[name='Buildings'").show();
+					$(".legendItem[name='Buildings']").show();
 
 				layers["Parking Lots"].addTo(map);
-					$(".legendItem[name='Parking Lots'").show();
+					$(".legendItem[name='Parking Lots']").show();
 
 				layers["Historical Points"].addTo(map);
-					$(".legendItem[name='Historical Points'").show();
+					$(".legendItem[name='Historical Points']").show();
 			break;
 
 			case "nativeamerican":
@@ -106,7 +106,7 @@ $(document).ready(function () {
 
 				layers["Trails"].addTo(map);
 				layers["Trails Hover"].addTo(map);
-					$(".legendItem[name='Trails'").show();
+					$(".legendItem[name='Trails']").show();
 			break;
 			
 			case "geology":
@@ -114,7 +114,7 @@ $(document).ready(function () {
 
 				layers["Trails"].addTo(map);
 				layers["Trails Hover"].addTo(map);
-					$(".legendItem[name='Trails'").show();
+					$(".legendItem[name='Trails']").show();
 
 				layers["Points of Interest"].addTo(map);
 			break;
@@ -124,14 +124,14 @@ $(document).ready(function () {
 				// to do: style trails differently - make more prominent, add labels at higher zoom
 				layers["Trails"].addTo(map);
 				layers["Trails Hover"].addTo(map);
-					$(".legendItem[name='Trails'").show();
+					$(".legendItem[name='Trails']").show();
 			break;
 
 			case "fishing":
 				map.fitBounds([[43.4277100925, -89.7249126434],[43.4077287885, -89.7392463684]]);
 
 				layers["Boat Launches"].addTo(map);
-					$(".legendItem[name='Boat Launches'").show();
+					$(".legendItem[name='Boat Launches']").show();
 
 				
 			break;
