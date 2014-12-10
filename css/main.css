@@ -148,13 +148,44 @@ nav {
     display: none; 
 }
 
+#nav-content ul
+{
+  font-family: "Source Sans Pro";
+  padding: 0;
+  margin: 0;
+}
+
+#nav-content li
+{
+  display: inline;
+  list-style: none;
+  background-color: #856363;
+  width: auto;
+  margin-right: 0.5vw;
+  padding: 0.4vh 1vw;
+  color: #fff;
+}
+
+#nav-content li i
+{
+  margin-right: 0.5vw;
+}
+
+#nav-content li:hover
+{
+  cursor: pointer;
+  color: #afbca2;
+}
+
 nav:hover #nav-content {
   display: inline-block;
 
-  width: 60vh;
+  width: auto;
   height: 10vh;
   margin-left: 1vh;
-  background-color: blue; }
+  margin-top: 0.5vh;
+  vertical-align: top;
+   }
 
 #legend {
   position: absolute;
