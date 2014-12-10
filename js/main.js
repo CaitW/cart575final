@@ -15,7 +15,7 @@ $(document).ready(function () {
 	map = L.map('map', {
 		zoomControl: false,
 		maxBounds: [[43.45503732537239,-89.6070671081543], [43.37311218382002,-89.8267936706543]]
-	}).setView([43.4180,-89.7297], 14);
+	}).setView([43.4180,-89.7297], 15);
 
 	map.fitBounds(defaultBbox);
 
@@ -398,7 +398,7 @@ $(document).ready(function () {
 
 			style = {
 				"color": "#856363",
-			    "weight": 10,
+			    "weight": 25,
 			    "opacity": 0.01
 			};
 			layers["Trails Hover"] = L.geoJson(data, {
