@@ -116,6 +116,7 @@ body
   height: 0.6vw !important;
   width: 0.6vw !important;
   background-color: #856363;
+  border: 0.1px solid #6a4f4f;
   border-radius: 50%;
    }
 
@@ -231,8 +232,8 @@ nav:hover #nav-content {
         margin-right: 1vw; }
 
 h3 {
-  font: bold 150%/250% "Source Sans Pro";
-  font-color: #302013;
+  font: bold "Source Sans Pro";
+  font-color: #39342f;
   display: inline;
   padding-top: 5vh;
 }

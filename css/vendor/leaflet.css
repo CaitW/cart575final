@@ -203,7 +203,7 @@ body {
 .leaflet-container {
 	font: 1vw "Source Sans Pro", Helvetica, sans-serif;
 	font-weight: lighter;
-	color: #302013;
+	color: #39342f;
 }
 
 
@@ -444,7 +444,7 @@ body {
 	background: transparent;
 	}
 .leaflet-container a.leaflet-popup-close-button:hover {
-	color: #999;
+	color: #6a4f4f;
 	}
 .leaflet-popup-scrolled {
 	overflow: auto;
