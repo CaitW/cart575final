@@ -64,7 +64,7 @@ $(document).ready(function () {
 					$(".legendItem[name='Trails']").show();
 
 				layers["Campsites"].addTo(map);
-					$(".legendItem[name='Campsites']").show();
+					$(".legendItem[name='Campsite Centerpoints']").show();
 
 				layers["Campsite Centerpoints"].addTo(map);
 
@@ -234,7 +234,7 @@ $(document).ready(function () {
 				}
 			}).addTo(map);
 		}).complete(function() {
-			$(document).trigger("layeradd", [layers["Buildings"], "Buildings", true]);
+			$(document).trigger("layeradd", [layers["Buildings"], "Buildings", true, "img/buildings.svg"]);
 		});
 
 		$.getJSON("data/campsiteOutlines.json", function (data) {
@@ -412,7 +412,7 @@ $(document).ready(function () {
 				}
 			});
 		}).complete(function() {
-			$(document).trigger("layeradd", [layers["Trails"], true, "Trails"]);
+			$(document).trigger("layeradd", [layers["Trails"], "Trails", true, "img/trail-curvy.svg"]);
 		});
 
 });
