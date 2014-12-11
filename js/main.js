@@ -81,7 +81,10 @@ $(document).ready(function () {
 					$(".legendItem[name='Boat Launches']").show();
 
 				layers["Parking Lots"].addTo(map);
+				layers["Parking Lot Polygons"].addTo(map);
 					$(".legendItem[name='Parking Lots']").show();
+
+				layers["Bathymetry"].addTo(map);
 			break;
 
 			case "history":
@@ -225,7 +228,7 @@ $(document).ready(function () {
 			var style = {
 				"color": "#7e7e7e",
 			    "weight": 0,
-			    "opacity": 0.9
+			    "fillOpacity": 0.5
 			};
 			layers["Buildings"] = L.geoJson(data, {
 				style: style,
@@ -235,6 +238,22 @@ $(document).ready(function () {
 			}).addTo(map);
 		}).complete(function() {
 			$(document).trigger("layeradd", [layers["Buildings"], "Buildings", true, "img/buildings.svg"]);
+		});
+
+		$.getJSON("data/parkingLotPolygons.json", function (data) {
+			var style = {
+				"color": "#fff",
+			    "weight": 0,
+			    "fillOpacity": 0.3
+			};
+			layers["Parking Lot Polygons"] = L.geoJson(data, {
+				style: style,
+				onEachFeature: function (feature, layer) {
+					layer.setStyle({clickable: false})
+				}
+			}).addTo(map);
+		}).complete(function() {
+			$(document).trigger("layeradd", [layers["Parking Lot Polygons"], "Parking Lot Polygons", false]);
 		});
 
 		$.getJSON("data/campsiteOutlines.json", function (data) {
@@ -414,6 +433,23 @@ $(document).ready(function () {
 		}).complete(function() {
 			$(document).trigger("layeradd", [layers["Trails"], "Trails", true, "img/trail-curvy.svg"]);
 		});
+
+		$.getJSON("data/bathymetry.json", function (data) {
+
+			var style = {
+				"color": "#90CAF9",
+			    "weight": 0.9,
+			    "opacity": 0.65
+			}
+
+			layers["Bathymetry"] = L.geoJson(data, {
+				className: "bathymetry",
+				style: style
+			});
+		}).complete(function() {
+			$(document).trigger("layeradd", [layers["Bathymetry"], "Bathymetry", false]);
+		});
+
 
 });
 
