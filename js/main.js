@@ -77,14 +77,10 @@ $(document).ready(function () {
 				layers["Buildings"].addTo(map);
 					$(".legendItem[name='Buildings']").show();
 
-				layers["Boat Launches"].addTo(map);
-					$(".legendItem[name='Boat Launches']").show();
-
 				layers["Parking Lots"].addTo(map);
 				layers["Parking Lot Polygons"].addTo(map);
 					$(".legendItem[name='Parking Lots']").show();
 
-				layers["Bathymetry"].addTo(map);
 			break;
 
 			case "history":
@@ -136,7 +132,23 @@ $(document).ready(function () {
 				layers["Boat Launches"].addTo(map);
 					$(".legendItem[name='Boat Launches']").show();
 
+				layers["Bathymetry"].addTo(map);
+
 				
+			break;
+
+			case "plantsAnimals":
+
+				layers["Trails"].addTo(map);
+				layers["Trails Hover"].addTo(map);
+						$(".legendItem[name='Trails']").show();
+
+				layers["Oak Forest"].addTo(map);
+				layers["East Bluff"].addTo(map);
+				layers["Parfreys Glen"].addTo(map);
+				layers["South Bluff Devils Nose"].addTo(map);
+
+
 			break;
 
 		}
@@ -270,6 +282,70 @@ $(document).ready(function () {
 			});
 		}).complete(function() {
 			$(document).trigger("layeradd", [layers["Campsites"], "Campsites", false]);
+		});
+
+		$.getJSON("data/areas/devilsLakeOakForest.json", function (data) {
+			var style = {
+				"color": "#7e7e7e",
+			    "weight": 0,
+			    "fillOpacity": 0.5
+			};
+			layers["Oak Forest"] = L.geoJson(data, {
+				style: style,
+				onEachFeature: function (feature, layer) {
+					layer.setStyle({clickable: false})
+				}
+			});
+		}).complete(function() {
+			$(document).trigger("layeradd", [layers["Oak Forest"], "Oak Forest", false]);
+		});
+
+		$.getJSON("data/areas/eastBluff.json", function (data) {
+			var style = {
+				"color": "#7e7e7e",
+			    "weight": 0,
+			    "fillOpacity": 0.5
+			};
+			layers["East Bluff"] = L.geoJson(data, {
+				style: style,
+				onEachFeature: function (feature, layer) {
+					layer.setStyle({clickable: false})
+				}
+			});
+		}).complete(function() {
+			$(document).trigger("layeradd", [layers["East Bluff"], "East Bluff", false]);
+		});
+
+		$.getJSON("data/areas/parfreysGlen.json", function (data) {
+			var style = {
+				"color": "#7e7e7e",
+			    "weight": 0,
+			    "fillOpacity": 0.5
+			};
+			layers["Parfreys Glen"] = L.geoJson(data, {
+				style: style,
+				onEachFeature: function (feature, layer) {
+					layer.setStyle({clickable: false})
+				}
+			});
+		}).complete(function() {
+			$(document).trigger("layeradd", [layers["Parfreys Glen"], "Parfreys Glen", false]);
+		});
+
+		$.getJSON("data/areas/southBluffDevilsNose.json", function (data) {
+			var style = {
+				"color": "#7e7e7e",
+			    "weight": 0,
+			    "fillOpacity": 0.5
+			};
+			layers["South Bluff Devils Nose"] = L.geoJson(data, {
+				style: style,
+				onEachFeature: function (feature, layer) {
+					layer.setStyle({clickable: false})
+				}
+			});
+		}).complete(function() {
+			$(document).trigger("layeradd", [layers["South Bluff Devils Nose"], "South Bluff Devils Nose", false]);
 		});
 
 		//////////////////////
