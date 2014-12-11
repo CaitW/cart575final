@@ -106,6 +106,9 @@ $(document).ready(function () {
 				layers["Trails"].addTo(map);
 				layers["Trails Hover"].addTo(map);
 					$(".legendItem[name='Trails']").show();
+
+				layers["Native American Mounds"].addTo(map);
+					$(".legendItem[name='Native American Mounds']").show();
 			break;
 			
 			case "geology":
@@ -386,6 +389,25 @@ $(document).ready(function () {
 			});
 		}).complete(function() {
 			$(document).trigger("layeradd", [layers["Historical Points"], "Historical Points", true, 'img/historical-points.svg']);
+		});
+
+		$.getJSON("data/mounds.json", function (data) {
+			layers["Native American Mounds"] = L.geoJson(data, {
+				pointToLayer: function (feature, latlng) {
+					var marker = L.divIcon({
+						className: "historicalPoints",
+						//html: "<img src='img/historical-points.svg'>"
+					});
+					return L.marker(latlng, {
+						icon: marker
+					})
+				},
+				onEachFeature: function(feature, layer) {
+					layer.bindPopup("<center><h3>" + feature.properties.Name + "</h3><br>" + feature.properties.Description + "</center>");
+				}
+			});
+		}).complete(function() {
+			$(document).trigger("layeradd", [layers["Native American Mounds"], "Native American Mounds", true, 'img/historical-points.svg']);
 		});
 
 		$.getJSON("data/pointsOfInterest.json", function (data) {
