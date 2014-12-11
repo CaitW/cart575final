@@ -19,11 +19,7 @@ body {
   line-height: 1.4; }
 
 
-/*
- * Remove text-shadow in selection highlight: h5bp.com/i
- * These selection rule sets have to be separate.
- * Customize the background color to match your design.
- */
+/* text selection coloring */
 ::-moz-selection {
   background: #b3d4fc;
   text-shadow: none; }
@@ -85,7 +81,7 @@ textarea {
    ========================================================================== */
 html, body {
   height: 100%;
-  font-family: lighter 1vw "Source Sans Pro"
+  font-family: lighter 1vw "Source Sans Pro";
   display: inline-block; 
 }
 
@@ -173,6 +169,10 @@ nav {
   color: #fff;
 }
 
+#nav-content li {
+  color: #E6E2DD;
+}
+
 #nav-content li i
 {
   margin-right: 0.5vw;
@@ -189,7 +189,7 @@ text-decoration:none;
 }
 
 a:visited {
-  color: white;
+  color: #E6E2DD;
 }
 
 a:visited:hover {
@@ -210,10 +210,12 @@ nav:hover #nav-content {
   position: absolute;
   bottom: 30%;
   right: 3%;
-  color: white;
+  font-family: "Source Sans Pro";
+  color: #E6E2DD;
   background-color: #856363;
   padding: 0.7vh; 
-  margin-bottom: 1vh;}
+  margin-bottom: 1vh;
+}
   #legend img
   {
     height: 1vw;
@@ -429,9 +431,6 @@ h3 {
     box-shadow: none !important;
     text-shadow: none !important; }
 
-  a,
-  a:visited {
-    text-decoration: underline; }
 
   a[href]:after {
     content: " (" attr(href) ")"; }
