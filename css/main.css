@@ -160,11 +160,11 @@ nav {
 
 #nav-content li
 {
-  display: inline;
+  display: block;
   list-style: none;
   background-color: #856363;
   width: auto;
-  margin-right: 0.5vw;
+  margin-bottom: 0.5vh;
   padding: 0.4vh 1vw;
   color: #fff;
 }
@@ -185,14 +185,14 @@ nav {
 }
 
 a:link,a:visited,a:active,a:hover{
-text-decoration:none;
+  text-decoration:none;
 }
 
-a:visited {
+a {
   color: #E6E2DD;
 }
 
-a:visited:hover {
+a:hover {
   color: #afbca2;
 }
 
