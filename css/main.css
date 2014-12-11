@@ -18,13 +18,6 @@ body {
   font-size: 1vm;
   line-height: 1.4; }
 
-a:link,a:visited,a:active,a:hover{
-text-decoration:none;
-}
-
-a:visited {
-  color: white;
-}
 
 /*
  * Remove text-shadow in selection highlight: h5bp.com/i
@@ -188,6 +181,18 @@ nav {
 #nav-content li:hover
 {
   cursor: pointer;
+  color: #afbca2;
+}
+
+a:link,a:visited,a:active,a:hover{
+text-decoration:none;
+}
+
+a:visited {
+  color: white;
+}
+
+a:visited:hover {
   color: #afbca2;
 }
 
