@@ -18,6 +18,14 @@ body {
   font-size: 1vm;
   line-height: 1.4; }
 
+a:link,a:visited,a:active,a:hover{
+text-decoration:none;
+}
+
+a:visited {
+  color: white;
+}
+
 /*
  * Remove text-shadow in selection highlight: h5bp.com/i
  * These selection rule sets have to be separate.
@@ -117,11 +125,11 @@ body
   width: 0.6vw !important;
   background-color: #856363;
   border: 0.1px solid #6a4f4f;
-  border-radius: 50%;
+  border-radius: 60%;
    }
 
 .historicalPoints:hover {
-  background-color: black;
+  background-color: #E6E2DD;
   cursor: pointer; }
 
 .pointsOfInterest {
