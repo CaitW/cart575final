@@ -395,8 +395,8 @@ $(document).ready(function () {
 			layers["Native American Mounds"] = L.geoJson(data, {
 				pointToLayer: function (feature, latlng) {
 					var marker = L.divIcon({
-						className: "historicalPoints",
-						//html: "<img src='img/historical-points.svg'>"
+						className: "mounds",
+						html: "<img src='img/mound.svg'>"
 					});
 					return L.marker(latlng, {
 						icon: marker
