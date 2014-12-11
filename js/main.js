@@ -10,14 +10,14 @@ $(document).ready(function () {
 	$("#barBody").html(slides[0].body);
 
 	// default bounding box of the initial view of the map
-	var defaultBbox = [[43.4375580436,-89.7041416168],[43.4023037086,-89.758644104]];
+	var defaultBbox = [[43.43,-89.71],[43.405,-89.75]];
 
 	map = L.map('map', {
 		zoomControl: false,
 		maxBounds: [[43.45503732537239,-89.6070671081543], [43.37311218382002,-89.8267936706543]]
-	}).setView([43.4180,-89.7297], 15);
+	}).setView([43.4180,-89.7297], 14);
 
-	map.fitBounds(defaultBbox);
+	//map.fitBounds(defaultBbox);
 
 	var zoomControl = new L.control.zoom({position: "topright"}).addTo(map);
 
