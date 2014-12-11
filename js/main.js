@@ -502,15 +502,22 @@ $(document).ready(function () {
 		// Overlays: Polylines //
 		/////////////////////////
 
-		$.getJSON("data/trails.json", function (data) {
-
-			var style = {
+		var defaultTrailsStyle = {
 				"color": "#856363",
 			    "weight": 0.9,
 			    "opacity": 0.65
-			}
+			};
+
+		var highlightedTrailsStyle = {
+			"color": "#856363",
+		    "weight": 1.5,
+		    "opacity": 0.65
+		}
+
+		$.getJSON("data/trails.json", function (data) {
+
 			layers["Trails"] = L.geoJson(data, {
-				style: style
+				style: defaultTrailsStyle
 			});
 
 			style = {

@@ -3,7 +3,7 @@ var	slides = [
 				{
 					"id": "welcome",
 					"title": "Welcome to Devil's Lake!",
-					"body": "Devil’s Lake State Park is located just south of Baraboo, Wisconsin and lies within Sauk County. As a popular destination for hiking, fishing, climbing, and camping, this park sees over two million visitors per year! The park is open year round from 6 a.m. to 11 p.m. with the Visitor’s Center open from 8 a.m. to 11 p.m. in the summer and from 8 a.m. to 4 p.m. during other seasons. For more information, please visit http://dnr.wi.gov/topic/parks/name/devilslake/. "
+					"body": "Devil’s Lake State Park is located just south of Baraboo, Wisconsin and lies within Sauk County. As a popular destination for hiking, fishing, climbing, and camping, this park sees over two million visitors per year! Click through the slides to see the various characteristics of Devil's Lake that make it as popular as it is today."
 				},
 				{
 					"id": "history",
