@@ -369,7 +369,7 @@ $(document).ready(function () {
 				}
 			});
 		}).complete(function() {
-			$(document).trigger("layeradd", [layers["Boat Launches"], "Boat Launches", true, 'img/boat-launch.svg']);
+			$(document).trigger("layeradd", [layers["Boat Launches"], "Boat Launches", true, 'img/boat-launch-NPS.svg']);
 		});
 
 		$.getJSON("data/historicalPoints.json", function (data) {
@@ -396,7 +396,7 @@ $(document).ready(function () {
 				pointToLayer: function (feature, latlng) {
 					var marker = L.divIcon({
 						className: "mounds",
-						html: "<img src='img/mounds-NPSish.svg'>"
+						html: "<img src='img/mounds-NPSish.svg'>" //redoing this icon
 					});
 					return L.marker(latlng, {
 						icon: marker
@@ -407,7 +407,7 @@ $(document).ready(function () {
 				}
 			});
 		}).complete(function() {
-			$(document).trigger("layeradd", [layers["Native American Mounds"], "Native American Mounds", true, 'img/historical-points.svg']);
+			$(document).trigger("layeradd", [layers["Native American Mounds"], "Native American Mounds", true, 'img/mounds-NPSish.svg']);
 		});
 
 		$.getJSON("data/pointsOfInterest.json", function (data) {
@@ -426,7 +426,7 @@ $(document).ready(function () {
 				}
 			});
 		}).complete(function() {
-			$(document).trigger("layeradd", [layers["Points of Interest"], "Points of Interest", true, 'img/points-of-interest.svg']);
+			$(document).trigger("layeradd", [layers["Points of Interest"], "Points of Interest", true, 'img/geology-NPS.svg']);
 		});
 
 		$.getJSON("data/campsiteCenterpoints.json", function (data) {
@@ -445,7 +445,7 @@ $(document).ready(function () {
 				}
 			});
 		}).complete(function() {
-			$(document).trigger("layeradd", [layers["Campsite Centerpoints"], "Campsite Centerpoints", true, 'img/campsites.svg']);
+			$(document).trigger("layeradd", [layers["Campsite Centerpoints"], "Campsite Centerpoints", true, 'img/campsites-NPS.svg']);
 		});
 
 		$.getJSON("data/shelters.json", function (data) {
@@ -462,7 +462,7 @@ $(document).ready(function () {
 				}
 			});
 		}).complete(function() {
-			$(document).trigger("layeradd", [layers["Shelters"], "Shelters", true, 'img/shelter-1.svg']);
+			$(document).trigger("layeradd", [layers["Shelters"], "Shelters", true, 'img/shelters-1-NPS.svg']);
 		});
 
 		$.getJSON("data/parkingLots.json", function (data) {
@@ -495,7 +495,7 @@ $(document).ready(function () {
 				}
 			});
 		}).complete(function() {
-			$(document).trigger("layeradd", [layers["Restrooms"], "Restrooms", true, 'img/restrooms.svg']);
+			$(document).trigger("layeradd", [layers["Restrooms"], "Restrooms", true, 'img/restrooms-NPS.svg']);
 		});
 
 		/////////////////////////
