@@ -360,7 +360,7 @@ $(document).ready(function () {
 				pointToLayer: function (feature, latlng) {
 					var marker = L.divIcon({
 						className: "boatLaunches",
-						html: "<img src='img/boat-launch.svg'>" // I do think these should be static sizes---the vh makes them too responsive + small on other screens. can edit in CSS>
+						html: "<img src='img/boat-launch-NPS.svg'>" // I do think these should be static sizes---the vh makes them too responsive + small on other screens. can edit in CSS>
 					});
 					return L.marker(latlng, {
 						icon: marker,
@@ -396,7 +396,7 @@ $(document).ready(function () {
 				pointToLayer: function (feature, latlng) {
 					var marker = L.divIcon({
 						className: "mounds",
-						html: "<img src='img/mound.svg'>"
+						html: "<img src='img/mounds-NPSish.svg'>"
 					});
 					return L.marker(latlng, {
 						icon: marker
@@ -415,7 +415,7 @@ $(document).ready(function () {
 				pointToLayer: function (feature, latlng) {
 					var marker = L.divIcon({
 						className: "pointsOfInterest",
-						html: "<img src='img/points-of-interest.svg'>"
+						html: "<img src='img/geology-NPS.svg'>"
 					});
 					return L.marker(latlng, {
 						icon: marker
@@ -434,7 +434,7 @@ $(document).ready(function () {
 				pointToLayer: function (feature, latlng) {
 					var marker = L.divIcon({
 						className: "campsiteCenterpoints",
-						html: "<img src='img/campsites.svg'>"
+						html: "<img src='img/campsites-NPS.svg'>"
 					});
 					return L.marker(latlng, {
 						icon: marker
@@ -453,7 +453,7 @@ $(document).ready(function () {
 				pointToLayer: function (feature, latlng) {
 					var marker = L.divIcon({
 						className: "shelters",
-						html: "<img src='img/shelter-1.svg'>"
+						html: "<img src='img/shelters-1-NPS.svg'>"
 					});
 					return L.marker(latlng, {
 						icon: marker, 
@@ -486,7 +486,7 @@ $(document).ready(function () {
 				pointToLayer: function (feature, latlng) {
 					var marker = L.divIcon({
 						className: "restrooms",
-						html: "<img src='img/restrooms.svg'>"
+						html: "<img src='img/restrooms-NPS.svg'>"
 					});
 					return L.marker(latlng, {
 						icon: marker, 
