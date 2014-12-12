@@ -396,7 +396,7 @@ $(document).ready(function () {
 				pointToLayer: function (feature, latlng) {
 					var marker = L.divIcon({
 						className: "mounds",
-						html: "<img src='img/mounds-NPSish.svg'>" //redoing this icon
+						html: "<img src='img/mounds-NPSish.svg'>"
 					});
 					return L.marker(latlng, {
 						icon: marker
