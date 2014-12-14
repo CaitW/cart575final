@@ -60,7 +60,6 @@ $(document).ready(function () {
 				map.fitBounds(defaultBbox);
 
 				layers["Trails"].addTo(map);
-				layers["Trails Hover"].addTo(map);
 					$(".legendItem[name='Trails']").show();
 
 				layers["Campsites"].addTo(map);
@@ -85,8 +84,9 @@ $(document).ready(function () {
 			case "history":
 				map.fitBounds(defaultBbox);
 
+				basemaps.trails.setOpacity(0.5);
+
 				layers["Trails"].addTo(map);
-				layers["Trails Hover"].addTo(map);
 					$(".legendItem[name='Trails']").show();
 
 				layers["Buildings"].addTo(map);
@@ -99,8 +99,9 @@ $(document).ready(function () {
 			case "nativeamerican":
 				map.fitBounds(defaultBbox);
 
+				basemaps.trails.setOpacity(0.5);
+
 				layers["Trails"].addTo(map);
-				layers["Trails Hover"].addTo(map);
 					$(".legendItem[name='Trails']").show();
 
 				layers["Native American Mounds"].addTo(map);
@@ -110,8 +111,9 @@ $(document).ready(function () {
 			case "geology":
 				map.fitBounds(defaultBbox);
 
+				basemaps.trails.setOpacity(0.5);
+
 				layers["Trails"].addTo(map);
-				layers["Trails Hover"].addTo(map);
 					$(".legendItem[name='Trails']").show();
 
 				layers["Points of Interest"].addTo(map);
@@ -119,13 +121,17 @@ $(document).ready(function () {
 
 			case "trails":
 				map.fitBounds(defaultBbox);
-				// to do: style trails differently - make more prominent, add labels at higher zoom
+				
+				basemaps.trails.setOpacity(1);
+
 				layers["Trails"].addTo(map);
-				layers["Trails Hover"].addTo(map);
 					$(".legendItem[name='Trails']").show();
 			break;
 
 			case "fishing":
+
+				basemaps.trails.setOpacity(0.5);
+
 				map.fitBounds([[43.4277100925, -89.7249126434],[43.4077287885, -89.7392463684]]);
 
 				layers["Boat Launches"].addTo(map);
@@ -138,8 +144,9 @@ $(document).ready(function () {
 
 			case "plantsAnimals":
 
+				basemaps.trails.setOpacity(0.5);
+
 				layers["Trails"].addTo(map);
-				layers["Trails Hover"].addTo(map);
 						$(".legendItem[name='Trails']").show();
 
 				layers["Oak Forest"].addTo(map);
@@ -220,11 +227,12 @@ $(document).ready(function () {
 		basemaps = {
 			"hillshade": L.tileLayer('https://a.tiles.mapbox.com/v4/nps.a6be40f0/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibnBzIiwiYSI6Ik5yOFVUR2sifQ.lcpvx7UEgHGoeObibjqMBw'),
 			"alternateHillshade": L.esri.tiledMapLayer('http://basemap.nationalmap.gov/arcgis/rest/services/USGSShadedReliefOnly/MapServer').setOpacity(0.3).addTo(map),
-			"bluff labels": L.tileLayer('data/custom-tiles/bluffLabels/{z}/{x}/{y}.png').addTo(map),
+			//"bluff labels": L.tileLayer('data/custom-tiles/bluffLabels/{z}/{x}/{y}.png').addTo(map),
 			"parks boundaries": L.tileLayer('data/custom-tiles/boundaries/{z}/{x}/{y}.png').setOpacity(0.4).addTo(map),
 			"boundaries and natural": L.tileLayer('data/custom-tiles/naturalAreas/{z}/{x}/{y}.png').setOpacity(0.4), //.addTo(map),
 			"water": L.tileLayer('https://a.tiles.mapbox.com/v4/nps.a706dc69/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibnBzIiwiYSI6Ik5yOFVUR2sifQ.lcpvx7UEgHGoeObibjqMBw').addTo(map),
 			"roads": L.tileLayer('https://a.tiles.mapbox.com/v4/nps.8eb491cc/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibnBzIiwiYSI6Ik5yOFVUR2sifQ.lcpvx7UEgHGoeObibjqMBw').setOpacity(0.8).addTo(map),
+			"trails": L.tileLayer('data/custom-tiles/trails/{z}/{x}/{y}.png').setOpacity(0.5).addTo(map),
 			"labels": L.tileLayer('https://a.tiles.mapbox.com/v4/nps.5dfeaf68/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibnBzIiwiYSI6Ik5yOFVUR2sifQ.lcpvx7UEgHGoeObibjqMBw').addTo(map)
 		};
 
@@ -419,30 +427,15 @@ $(document).ready(function () {
 		// Overlays: Polylines //
 		/////////////////////////
 
-		var defaultTrailsStyle = {
-				"color": "#856363",
-			    "weight": 0.9,
-			    "opacity": 0.65
-			};
-
-		var highlightedTrailsStyle = {
-			"color": "#856363",
-		    "weight": 1.5,
-		    "opacity": 0.65
-		}
-
+		// these are actually not visible, but just provide clicking functionality
 		$.getJSON("data/trails.json", function (data) {
-
-			layers["Trails"] = L.geoJson(data, {
-				style: defaultTrailsStyle
-			});
 
 			style = {
 				"color": "#856363",
 			    "weight": 25,
 			    "opacity": 0.01
 			};
-			layers["Trails Hover"] = L.geoJson(data, {
+			layers["Trails"] = L.geoJson(data, {
 				className: "trails",
 				style: style,
 				onEachFeature: function (feature, layer) {
