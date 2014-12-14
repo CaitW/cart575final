@@ -10,7 +10,8 @@ $(document).ready(function () {
 
 	map = L.map('map', {
 		zoomControl: false,
-		maxBounds: [[43.45503732537239,-89.6070671081543], [43.37311218382002,-89.8267936706543]]
+		maxBounds: [[43.45503732537239,-89.6070671081543], [43.37311218382002,-89.8267936706543]],
+		minZoom: 13
 	}).setView([43.4180,-89.7297], 14);
 
 	//map.fitBounds(defaultBbox);
@@ -62,7 +63,7 @@ $(document).ready(function () {
 
 		switch (slideId) {
 
-			case "welcome":
+			case "home":
 				map.fitBounds(defaultBbox);
 
 				layers["Trails"].addTo(map);
@@ -123,6 +124,7 @@ $(document).ready(function () {
 					$(".legendItem[name='Trails']").show();
 
 				layers["Points of Interest"].addTo(map);
+					$(".legendItem[name='Points of Interest']").show();
 			break;
 
 			case "trails":
@@ -155,11 +157,40 @@ $(document).ready(function () {
 				layers["Trails"].addTo(map);
 						$(".legendItem[name='Trails']").show();
 
-				layers["Oak Forest"].addTo(map);
-				layers["East Bluff"].addTo(map);
-				layers["Parfreys Glen"].addTo(map);
-				layers["South Bluff Devils Nose"].addTo(map);
+			break;
 
+			case "explore":
+
+				basemaps.trails.setOpacity(0.5);
+
+				layers["Trails"].addTo(map);
+					$(".legendItem[name='Trails']").show();
+
+				layers["Campsites"].addTo(map);
+					$(".legendItem[name='Campsite Centerpoints']").show();
+
+				layers["Campsite Centerpoints"].addTo(map);
+
+				layers["Restrooms"].addTo(map);
+					$(".legendItem[name='Restrooms']").show();
+
+				layers["Shelters"].addTo(map);
+					$(".legendItem[name='Shelters']").show();
+
+				layers["Buildings"].addTo(map);
+					$(".legendItem[name='Buildings']").show();
+
+				layers["Parking Lots"].addTo(map);
+					$(".legendItem[name='Parking Lots']").show();
+
+				layers["Boat Launches"].addTo(map);
+					$(".legendItem[name='Boat Launches']").show();
+
+				layers["Points of Interest"].addTo(map);
+					$(".legendItem[name='pointsOfInterest']").show();
+
+				layers["Historical Points"].addTo(map);
+					$(".legendItem[name='Historical Points']").show();
 
 			break;
 
@@ -181,7 +212,7 @@ $(document).ready(function () {
 		e.preventDefault();
 
 		$("li.selected").removeClass("selected");
-		
+
 		$(this).parent().addClass("selected");
 
 		var slideId = $(this).attr("data-slide-id");
@@ -194,7 +225,6 @@ $(document).ready(function () {
 				$(document).trigger("slideChange", [slideId, x]);
 			}
 		}
-
 	});
 
 	//////////////////////
@@ -208,12 +238,15 @@ $(document).ready(function () {
 			basemaps = {
 				"hillshade": L.tileLayer('https://a.tiles.mapbox.com/v4/nps.a6be40f0/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibnBzIiwiYSI6Ik5yOFVUR2sifQ.lcpvx7UEgHGoeObibjqMBw'),
 				"alternateHillshade": L.esri.tiledMapLayer('http://basemap.nationalmap.gov/arcgis/rest/services/USGSShadedReliefOnly/MapServer').setOpacity(0.3).addTo(map),
-				//"bluff labels": L.tileLayer('data/custom-tiles/bluffLabels/{z}/{x}/{y}.png').addTo(map),
-				"parks boundaries": L.tileLayer('data/custom-tiles/boundaries/{z}/{x}/{y}.png').setOpacity(0.4).addTo(map),
-				"boundaries and natural": L.tileLayer('data/custom-tiles/naturalAreas/{z}/{x}/{y}.png').setOpacity(0.4), //.addTo(map),
+				"parks boundaries": L.tileLayer('data/custom-tiles/boundaries/{z}/{x}/{y}.png', {
+					bounds: [[43.3377,-89.8235],[43.4741,-89.5952]]
+				}).setOpacity(0.4).addTo(map),
 				"water": L.tileLayer('https://a.tiles.mapbox.com/v4/nps.a706dc69/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibnBzIiwiYSI6Ik5yOFVUR2sifQ.lcpvx7UEgHGoeObibjqMBw').addTo(map),
 				"roads": L.tileLayer('https://a.tiles.mapbox.com/v4/nps.8eb491cc/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibnBzIiwiYSI6Ik5yOFVUR2sifQ.lcpvx7UEgHGoeObibjqMBw').setOpacity(0.8).addTo(map),
-				"trails": L.tileLayer('data/custom-tiles/trails/{z}/{x}/{y}.png').setOpacity(0.5).addTo(map),
+				"trails": L.tileLayer('data/custom-tiles/trails/{z}/{x}/{y}.png', {
+					bounds: [[43.3377,-89.8235],[43.4741,-89.5952]]
+				}).setOpacity(0.5).addTo(map),
+				"bluff labels": L.tileLayer('data/custom-tiles/bluffLabels/{z}/{x}/{y}.png').addTo(map),
 				"labels": L.tileLayer('https://a.tiles.mapbox.com/v4/nps.5dfeaf68/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibnBzIiwiYSI6Ik5yOFVUR2sifQ.lcpvx7UEgHGoeObibjqMBw').addTo(map)
 			};
 
@@ -456,5 +489,5 @@ $(document).ready(function () {
 });
 
 $(window).load(function() {
-	
+	$("a[data-slide-id='home']").click();
 });
