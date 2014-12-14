@@ -43,7 +43,17 @@ $(document).ready(function () {
 		}
 	});
 
-	$(document).on("slideChange", function (e, slideId) {
+	$(document).on("slideChange", function (e, slideId, slideNumber) {
+
+		$("#barBody").toggle("slide", "left", 100, function ()
+		{
+				
+		});
+
+		$("#barHeader, #barBody").promise().done(function () {
+			$("#barBody").html(slides[slideNumber].body);
+			$("#barHeader, #barBody").effect("slide", {direction: "right", mode:"show"}, 200);
+		});
 
 		$.each(layers, function (key, value)
 		{
@@ -170,50 +180,21 @@ $(document).ready(function () {
 		$("#legendChevron.fa-chevron-up").removeClass("fa-chevron-up").addClass("fa-chevron-down");
 	});
 
-	$(document).on("click", "#rightScroll i", function () {
-		
-		infoBarSlideNumber++;
+	$(document).on("click", "#barHeader li a", function (e) {
 
-		if(infoBarSlideNumber == slides.length)
+		e.preventDefault();
+
+		var slideId = $(this).attr("data-slide-id");
+
+		// find our slide based on the id
+		for(var x = 0; x < slides.length; x++)
 		{
-			infoBarSlideNumber = 0;
-		}
-
-
-		$("#barHeader, #barBody").toggle("slide", "left", 100, function ()
+			if (slides[x].id == slideId)
 			{
-				
-			});
-
-		$("#barHeader, #barBody").promise().done(function () {
-			$("#barHeader").html(slides[infoBarSlideNumber].title);
-			$("#barBody").html(slides[infoBarSlideNumber].body);
-			$("#barHeader, #barBody").effect("slide", {direction: "right", mode:"show"}, 200);
-		});
-
-		//$(document).trigger("slideChange", [slides[infoBarSlideNumber].id]);
-	});
-
-	$(document).on("click", "#leftScroll i", function () {
-		
-		infoBarSlideNumber--;
-
-		if(infoBarSlideNumber == -1)
-		{
-			infoBarSlideNumber = slides.length - 1;
+				$(document).trigger("slideChange", [slideId, x]);
+			}
 		}
 
-
-		$("#barHeader, #barBody").effect("slide", {direction: "right", mode:"hide"}, 100);
-
-
-		$("#barHeader, #barBody").promise().done(function () {
-			$("#barHeader").html(slides[infoBarSlideNumber].title);
-			$("#barBody").html(slides[infoBarSlideNumber].body);
-			$("#barHeader, #barBody").effect("slide", {direction: "left", mode:"show"}, 200);
-		});
-
-		//$(document).trigger("slideChange", [slides[infoBarSlideNumber].id]);
 	});
 
 	//////////////////////
