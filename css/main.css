@@ -271,31 +271,6 @@ h3 {
 	
 }
 
-/*
-#leftScroll, #rightScroll
-{
-	position: absolute;
-	font-size: 400%;
-}
-
-#leftScroll 
-{
-	top: 30%;
-	left: 2%;
-}
-
-#rightScroll 
-{
-	top: 30%;
-	right: 2%;
-}
-
-#leftScroll i:hover, #rightScroll i:hover
-{
-	cursor: pointer;
-	color: #ccc;
-}
-*/
 
 #barHeader
 {
@@ -318,6 +293,11 @@ h3 {
    display: inline;
    padding: 0.5vh 0.5vw;
    margin-right: 0.5vw;
+}
+
+li.selected a
+{
+  color: #afbca2;;
 }
 
 #barBody

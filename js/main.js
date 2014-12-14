@@ -5,10 +5,6 @@ var infoBarSlideNumber = 0;
 
 $(document).ready(function () {
 
-	// append the contents of our first slide
-	//$("#barHeader").html(slides[0].title);
-	//$("#barBody").html(slides[0].body);
-
 	// default bounding box of the initial view of the map
 	var defaultBbox = [[43.43,-89.71],[43.405,-89.75]];
 
@@ -183,6 +179,10 @@ $(document).ready(function () {
 	$(document).on("click", "#barHeader li a", function (e) {
 
 		e.preventDefault();
+
+		$("li.selected").removeClass("selected");
+		
+		$(this).parent().addClass("selected");
 
 		var slideId = $(this).attr("data-slide-id");
 
