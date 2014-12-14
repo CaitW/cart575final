@@ -78,7 +78,6 @@ $(document).ready(function () {
 					$(".legendItem[name='Buildings']").show();
 
 				layers["Parking Lots"].addTo(map);
-				layers["Parking Lot Polygons"].addTo(map);
 					$(".legendItem[name='Parking Lots']").show();
 
 			break;
@@ -92,9 +91,6 @@ $(document).ready(function () {
 
 				layers["Buildings"].addTo(map);
 					$(".legendItem[name='Buildings']").show();
-
-				layers["Parking Lots"].addTo(map);
-					$(".legendItem[name='Parking Lots']").show();
 
 				layers["Historical Points"].addTo(map);
 					$(".legendItem[name='Historical Points']").show();
@@ -224,9 +220,9 @@ $(document).ready(function () {
 		basemaps = {
 			"hillshade": L.tileLayer('https://a.tiles.mapbox.com/v4/nps.a6be40f0/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibnBzIiwiYSI6Ik5yOFVUR2sifQ.lcpvx7UEgHGoeObibjqMBw'),
 			"alternateHillshade": L.esri.tiledMapLayer('http://basemap.nationalmap.gov/arcgis/rest/services/USGSShadedReliefOnly/MapServer').setOpacity(0.3).addTo(map),
-			"parks boundaries": L.tileLayer('data/custom-tiles/parksBoundaries/{z}/{x}/{y}.png', {
-					bounds: [[43.3843,-89.7729],[43.4482,-89.65]]
-				}).addTo(map),
+			"bluff labels": L.tileLayer('data/custom-tiles/bluffLabels/{z}/{x}/{y}.png').addTo(map),
+			"parks boundaries": L.tileLayer('data/custom-tiles/boundaries/{z}/{x}/{y}.png').setOpacity(0.4).addTo(map),
+			"boundaries and natural": L.tileLayer('data/custom-tiles/naturalAreas/{z}/{x}/{y}.png').setOpacity(0.4), //.addTo(map),
 			"water": L.tileLayer('https://a.tiles.mapbox.com/v4/nps.a706dc69/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibnBzIiwiYSI6Ik5yOFVUR2sifQ.lcpvx7UEgHGoeObibjqMBw').addTo(map),
 			"roads": L.tileLayer('https://a.tiles.mapbox.com/v4/nps.8eb491cc/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibnBzIiwiYSI6Ik5yOFVUR2sifQ.lcpvx7UEgHGoeObibjqMBw').setOpacity(0.8).addTo(map),
 			"labels": L.tileLayer('https://a.tiles.mapbox.com/v4/nps.5dfeaf68/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibnBzIiwiYSI6Ik5yOFVUR2sifQ.lcpvx7UEgHGoeObibjqMBw').addTo(map)
@@ -255,22 +251,6 @@ $(document).ready(function () {
 			$(document).trigger("layeradd", [layers["Buildings"], "Buildings", true, "img/buildings.svg"]);
 		});
 
-		$.getJSON("data/parkingLotPolygons.json", function (data) {
-			var style = {
-				"color": "#fff",
-			    "weight": 0,
-			    "fillOpacity": 0.3
-			};
-			layers["Parking Lot Polygons"] = L.geoJson(data, {
-				style: style,
-				onEachFeature: function (feature, layer) {
-					layer.setStyle({clickable: false})
-				}
-			}).addTo(map);
-		}).complete(function() {
-			$(document).trigger("layeradd", [layers["Parking Lot Polygons"], "Parking Lot Polygons", false]);
-		});
-
 		$.getJSON("data/campsiteOutlines.json", function (data) {
 			var style = {
 				"color": "#333333",
@@ -287,69 +267,6 @@ $(document).ready(function () {
 			$(document).trigger("layeradd", [layers["Campsites"], "Campsites", false]);
 		});
 
-		$.getJSON("data/areas/devilsLakeOakForest.json", function (data) {
-			var style = {
-				"color": "#7e7e7e",
-			    "weight": 0,
-			    "fillOpacity": 0.5
-			};
-			layers["Oak Forest"] = L.geoJson(data, {
-				style: style,
-				onEachFeature: function (feature, layer) {
-					layer.setStyle({clickable: false})
-				}
-			});
-		}).complete(function() {
-			$(document).trigger("layeradd", [layers["Oak Forest"], "Oak Forest", false]);
-		});
-
-		$.getJSON("data/areas/eastBluff.json", function (data) {
-			var style = {
-				"color": "#7e7e7e",
-			    "weight": 0,
-			    "fillOpacity": 0.5
-			};
-			layers["East Bluff"] = L.geoJson(data, {
-				style: style,
-				onEachFeature: function (feature, layer) {
-					layer.setStyle({clickable: false})
-				}
-			});
-		}).complete(function() {
-			$(document).trigger("layeradd", [layers["East Bluff"], "East Bluff", false]);
-		});
-
-		$.getJSON("data/areas/parfreysGlen.json", function (data) {
-			var style = {
-				"color": "#7e7e7e",
-			    "weight": 0,
-			    "fillOpacity": 0.5
-			};
-			layers["Parfreys Glen"] = L.geoJson(data, {
-				style: style,
-				onEachFeature: function (feature, layer) {
-					layer.setStyle({clickable: false})
-				}
-			});
-		}).complete(function() {
-			$(document).trigger("layeradd", [layers["Parfreys Glen"], "Parfreys Glen", false]);
-		});
-
-		$.getJSON("data/areas/southBluffDevilsNose.json", function (data) {
-			var style = {
-				"color": "#7e7e7e",
-			    "weight": 0,
-			    "fillOpacity": 0.5
-			};
-			layers["South Bluff Devils Nose"] = L.geoJson(data, {
-				style: style,
-				onEachFeature: function (feature, layer) {
-					layer.setStyle({clickable: false})
-				}
-			});
-		}).complete(function() {
-			$(document).trigger("layeradd", [layers["South Bluff Devils Nose"], "South Bluff Devils Nose", false]);
-		});
 
 		//////////////////////
 		// Overlays: Points //
@@ -388,7 +305,7 @@ $(document).ready(function () {
 				}
 			});
 		}).complete(function() {
-			$(document).trigger("layeradd", [layers["Historical Points"], "Historical Points", true, 'img/historical-points.svg']);
+			$(document).trigger("layeradd", [layers["Historical Points"], "Historical Points", true, 'img/old/historical-points.svg']);
 		});
 
 		$.getJSON("data/mounds.json", function (data) {
