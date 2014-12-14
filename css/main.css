@@ -271,6 +271,7 @@ h3 {
 	
 }
 
+/*
 #leftScroll, #rightScroll
 {
 	position: absolute;
@@ -294,28 +295,38 @@ h3 {
 	cursor: pointer;
 	color: #ccc;
 }
+*/
 
 #barHeader
 {
-	width: 86%;
-	margin-left: 6%;
 	display: block;
-	padding: 1vh;
 	font-family: "Noticia Text";
 	font-weight: bold;
-	font-size: 200%;
+	font-size: 100%;
 	color: #91968A;
+}
+
+#barHeader ul
+{
+  list-style: none;
+  padding: 0;
+  margin: 1vh 1vw;
+}
+
+#barHeader li
+{
+   display: inline;
+   padding: 0.5vh 0.5vw;
+   margin-right: 0.5vw;
 }
 
 #barBody
 {
 	display: block;
-	width: 86%;
-	margin-left: 6%;
 	font-family: "Source Sans Pro";
 	font-size: 100%;
 	color: #ccc;
-	padding: 1vh;
+  padding: 1vh 2vw;
 }
 
 #logoBox img
