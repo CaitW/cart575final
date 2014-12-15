@@ -463,7 +463,7 @@ $(document).ready(function () {
 						})
 					},
 					onEachFeature: function(feature, layer) {
-						layer.bindPopup("<center><h3>" + feature.properties.Name + "</h3></center>");
+						layer.bindPopup("<center><h3>" + feature.properties.Name + "</h3><br><div class='popupImage'><img src='" + feature.properties.image + "'</div></center>");
 					}
 				});
 			}).complete(function() {

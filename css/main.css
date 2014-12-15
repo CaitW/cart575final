@@ -208,9 +208,10 @@ nav:hover #nav-content {
 
    .popupImage img
    {
-    width: 6vw;
+    width: 10vw;
     text-align: center;
     border: 0.5px solid #666666;
+
    }
 
 #legend {
