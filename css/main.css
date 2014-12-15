@@ -206,6 +206,12 @@ nav:hover #nav-content {
   vertical-align: top;
    }
 
+   .popupImage img
+   {
+    width: 6vw;
+    text-align: center;
+   }
+
 #legend {
   position: absolute;
   bottom: 30%;
