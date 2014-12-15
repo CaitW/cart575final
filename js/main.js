@@ -406,7 +406,7 @@ $(document).ready(function () {
 						})
 					},
 					onEachFeature: function(feature, layer) {
-						layer.bindPopup("<center><h3>" + feature.properties.Name + "</h3><br>" + feature.properties.Description + "<div class='popupImage'><img src='" + feature.properties.image + "'></div></center>");
+						layer.bindPopup("<center><h3>" + feature.properties.Name + "</h3><br>" + feature.properties.Description + "</center>");
 					}
 				});
 			}).complete(function() {
