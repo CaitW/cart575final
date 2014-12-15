@@ -305,7 +305,29 @@ h3 {
 
 li.selected a
 {
-  color: #afbca2;;
+  color: #afbca2;
+}
+
+.legendItem.selected
+{
+  color: #fff;
+}
+
+.legendItem.selected:hover
+{
+  cursor: pointer;
+  color: #999;
+}
+
+.legendItem.disabled
+{
+  color: #999;
+}
+
+.legendItem.disabled:hover
+{
+  cursor: pointer;
+  color: #fff;
 }
 
 #barBody

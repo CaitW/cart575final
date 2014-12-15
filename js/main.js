@@ -1,9 +1,30 @@
+/*
+
+/////////////////////////////////////
+// The Devil's Lake State Park Map //
+// Cartography 575 Final Project   //
+// Completed December 2014         //
+/////////////////////////////////////
+
+Contributors:
+
+	Caitlin Wolters - coding, design, custom tiles - wolters.caitlin@gmail.com
+
+	Natalie Amend - design
+
+	Jaron McCallum - content
+
+*/
+
+
 
 var map, layers, basemaps;
-var infoBarSlideNumber = 0;
-
 
 $(document).ready(function () {
+
+	////////////////////////
+	// Map Initialization //
+	//////////////////////// 
 
 	// default bounding box of the initial view of the map
 	var defaultBbox = [[43.43,-89.71],[43.405,-89.75]];
@@ -14,11 +35,23 @@ $(document).ready(function () {
 		minZoom: 13
 	}).setView([43.4180,-89.7297], 14);
 
-	//map.fitBounds(defaultBbox);
-
 	var zoomControl = new L.control.zoom({position: "topright"}).addTo(map);
 
 	L.Icon.Default.imagePath = "img";
+
+	///////////////
+	// Functions //
+	///////////////
+
+	function openLegend() {
+		$("#legendContent").show();
+		$("#legendChevron.fa-chevron-down").removeClass("fa-chevron-down").addClass("fa-chevron-up");
+	}
+
+	function closeLegend() {
+		$("#legendContent").hide();
+		$("#legendChevron.fa-chevron-up").removeClass("fa-chevron-up").addClass("fa-chevron-down");
+	}
 
 	/////////////////////
 	// Event Listeners //
@@ -42,10 +75,7 @@ $(document).ready(function () {
 
 	$(document).on("slideChange", function (e, slideId, slideNumber) {
 
-		$("#barBody").toggle("slide", "left", 100, function ()
-		{
-				
-		});
+		$("#barBody").toggle("slide", "left", 100);
 
 		$("#barHeader, #barBody").promise().done(function () {
 			$("#barBody").html(slides[slideNumber].body);
@@ -64,7 +94,13 @@ $(document).ready(function () {
 		switch (slideId) {
 
 			case "home":
+
+				$(".legendItem").removeClass("selected");
+				$(".legendItem").removeClass("disabled");
+
 				map.fitBounds(defaultBbox);
+
+				map.removeLayer(basemaps["trail labels"]);
 
 				basemaps.bathymetry.setOpacity(0.3);
 				basemaps.trails.setOpacity(0.5);
@@ -73,9 +109,9 @@ $(document).ready(function () {
 					$(".legendItem[name='Trails']").show();
 
 				layers["Campsites"].addTo(map);
-					$(".legendItem[name='Campsite Centerpoints']").show();
-
-				layers["Campsite Centerpoints"].addTo(map);
+					
+				layers["Campgrounds"].addTo(map);
+					$(".legendItem[name='Campgrounds']").show();
 
 				layers["Restrooms"].addTo(map);
 					$(".legendItem[name='Restrooms']").show();
@@ -92,7 +128,13 @@ $(document).ready(function () {
 			break;
 
 			case "history":
+
+				$(".legendItem").removeClass("selected");
+				$(".legendItem").removeClass("disabled");
+
 				map.fitBounds(defaultBbox);
+
+				map.removeLayer(basemaps["trail labels"]);
 
 				basemaps.trails.setOpacity(0.5);
 				basemaps.bathymetry.setOpacity(0.3);
@@ -108,6 +150,12 @@ $(document).ready(function () {
 			break;
 
 			case "nativeamerican":
+
+				$(".legendItem").removeClass("selected");
+				$(".legendItem").removeClass("disabled");
+
+				map.removeLayer(basemaps["trail labels"]);
+
 				map.fitBounds(defaultBbox);
 
 				basemaps.trails.setOpacity(0.5);
@@ -121,7 +169,13 @@ $(document).ready(function () {
 			break;
 			
 			case "geology":
+
+				$(".legendItem").removeClass("selected");
+				$(".legendItem").removeClass("disabled");
+
 				map.fitBounds(defaultBbox);
+
+				map.removeLayer(basemaps["trail labels"]);
 
 				basemaps.trails.setOpacity(0.5);
 				basemaps.bathymetry.setOpacity(0.3);
@@ -134,16 +188,28 @@ $(document).ready(function () {
 			break;
 
 			case "trails":
+
+				$(".legendItem").removeClass("selected");
+				$(".legendItem").removeClass("disabled");
+				
 				map.fitBounds(defaultBbox);
 				
+				basemaps["trail labels"].addTo(map);
 				basemaps.trails.setOpacity(1);
+				map.removeLayer(basemaps["bluff labels"]);
 				basemaps.bathymetry.setOpacity(0.3);
 
 				layers["Trails"].addTo(map);
 					$(".legendItem[name='Trails']").show();
+
 			break;
 
 			case "fishing":
+
+				map.removeLayer(basemaps["trail labels"]);
+
+				$(".legendItem").removeClass("selected");
+				$(".legendItem").removeClass("disabled");
 
 				basemaps.trails.setOpacity(0.5);
 				basemaps.bathymetry.setOpacity(0.8);
@@ -158,53 +224,46 @@ $(document).ready(function () {
 
 			case "explore":
 
+				map.removeLayer(basemaps["trail labels"]);
+
+				$(".legendItem").removeClass("selected");
+				$(".legendItem").removeClass("disabled");
+				$(".legendItem").addClass("disabled");
+
+				openLegend();
+
 				map.fitBounds(defaultBbox);
 				basemaps.trails.setOpacity(0.5);
 				basemaps.bathymetry.setOpacity(0.3);
 
-				layers["Trails"].addTo(map);
-					$(".legendItem[name='Trails']").show();
-
 				layers["Campsites"].addTo(map);
-					$(".legendItem[name='Campsite Centerpoints']").show();
 
-				layers["Campsite Centerpoints"].addTo(map);
+				layers["Trails"].addTo(map);
 
-				layers["Restrooms"].addTo(map);
-					$(".legendItem[name='Restrooms']").show();
+				$(".legendItem[name='Campgrounds']").show();
 
-				layers["Shelters"].addTo(map);
-					$(".legendItem[name='Shelters']").show();
+				$(".legendItem[name='Restrooms']").show();
 
-				layers["Buildings"].addTo(map);
-					$(".legendItem[name='Buildings']").show();
+				$(".legendItem[name='Shelters']").show();
 
-				layers["Parking Lots"].addTo(map);
-					$(".legendItem[name='Parking Lots']").show();
+				$(".legendItem[name='Buildings']").show();
 
-				layers["Boat Launches"].addTo(map);
-					$(".legendItem[name='Boat Launches']").show();
+				$(".legendItem[name='Parking Lots']").show();
 
-				layers["Points of Interest"].addTo(map);
-					$(".legendItem[name='pointsOfInterest']").show();
+				$(".legendItem[name='Boat Launches']").show();
 
-				layers["Historical Points"].addTo(map);
-					$(".legendItem[name='Historical Points']").show();
+				$(".legendItem[name='Points of Interest']").show();
+
+				$(".legendItem[name='Historical Points']").show();
 
 			break;
 
 		}
 	});
 
-	$(document).on("click","#legendChevron.fa-chevron-down", function () {
-		$("#legendContent").show();
-		$("#legendChevron.fa-chevron-down").removeClass("fa-chevron-down").addClass("fa-chevron-up");
-	});
+	$(document).on("click","#legendChevron.fa-chevron-down", openLegend);
 
-	$(document).on("click","#legendChevron.fa-chevron-up", function () {
-		$("#legendContent").hide();
-		$("#legendChevron.fa-chevron-up").removeClass("fa-chevron-up").addClass("fa-chevron-down");
-	});
+	$(document).on("click","#legendChevron.fa-chevron-up", closeLegend);
 
 	$(document).on("click", "#barHeader li a", function (e) {
 
@@ -226,6 +285,19 @@ $(document).ready(function () {
 		}
 	});
 
+	$(document).on("click", ".legendItem.selected", function (e) {
+		$(this).removeClass("selected").addClass("disabled");
+		var layerToTurnOff = $(this).attr("name");
+		map.removeLayer(layers[layerToTurnOff]);
+	});
+
+	$(document).on("click", ".legendItem.disabled", function (e) {
+		$(this).removeClass("disabled").addClass("selected");
+		var layerToTurnOn = $(this).attr("name");
+		map.addLayer(layers[layerToTurnOn]);
+	});
+
+
 	//////////////////////
 	// add all our data //
 	//////////////////////
@@ -246,6 +318,9 @@ $(document).ready(function () {
 					bounds: [[43.3377,-89.8235],[43.4741,-89.5952]]
 				}).setOpacity(0.5).addTo(map),
 				"bluff labels": L.tileLayer('data/custom-tiles/bluffLabels/{z}/{x}/{y}.png').addTo(map),
+				"trail labels": L.tileLayer('data/custom-tiles/trail-labels/{z}/{x}/{y}.png', {
+					bounds: [[43.3620,-89.782],[43.4531,-89.599]]
+				}).setOpacity(0.7),
 				"labels": L.tileLayer('https://a.tiles.mapbox.com/v4/nps.5dfeaf68/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibnBzIiwiYSI6Ik5yOFVUR2sifQ.lcpvx7UEgHGoeObibjqMBw').addTo(map),
 				"bathymetry": L.tileLayer('data/custom-tiles/bathymetry/{z}/{x}/{y}.png', {
 					bounds: [[43.4082,-89.7383],[43.4266,-89.7254]]
@@ -374,7 +449,7 @@ $(document).ready(function () {
 			});
 
 			$.getJSON("data/campsiteCenterpoints.json", function (data) {
-				layers["Campsite Centerpoints"] = L.geoJson(data, {
+				layers["Campgrounds"] = L.geoJson(data, {
 					pointToLayer: function (feature, latlng) {
 						var marker = L.divIcon({
 							className: "campsiteCenterpoints",
@@ -389,7 +464,7 @@ $(document).ready(function () {
 					}
 				});
 			}).complete(function() {
-				$(document).trigger("layeradd", [layers["Campsite Centerpoints"], "Campsite Centerpoints", true, 'img/campsites-NPS.svg']);
+				$(document).trigger("layeradd", [layers["Campgrounds"], "Campgrounds", true, 'img/campsites-NPS.svg']);
 			});
 
 			$.getJSON("data/shelters.json", function (data) {
