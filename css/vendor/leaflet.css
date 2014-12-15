@@ -198,12 +198,10 @@ body {
 	background: #DCD7D0;
 	}
 
-
-/* general typography */
 .leaflet-container {
 	font: 1vw "Source Sans Pro", Helvetica, sans-serif;
 	font-weight: lighter;
-	color: #39342f;
+	color: #3e2525;
 }
 
 
