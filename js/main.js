@@ -406,7 +406,33 @@ $(document).ready(function () {
 						})
 					},
 					onEachFeature: function(feature, layer) {
-						layer.bindPopup("<center><h3>" + feature.properties.Name + "</h3><br>" + feature.properties.Description + "</center>");
+						if(feature.properties.Name != null)
+						{
+							if(feature.properties.image)
+							{
+								if(feature.properties.Description)
+								{
+									layer.bindPopup("<center><h3>" + feature.properties.Name + "</h3><br>" + feature.properties.Description + "<div class='popupImage'><img src='" + feature.properties.image + "'></div></center>");
+								}
+								else
+								{
+									layer.bindPopup("<center><h3>" + feature.properties.Name + "</h3><br><div class='popupImage'><img src='" + feature.properties.image + "'></div></center>");
+								}
+								
+							}
+							else
+							{
+								if(feature.properties.Description)
+								{
+									layer.bindPopup("<center><h3>" + feature.properties.Name + "</h3><br>" + feature.properties.Description + "</center>");
+								}
+								else
+								{
+									layer.bindPopup("<center><h3>" + feature.properties.Name + "</center></h3>");
+								}
+								
+							}
+						}
 					}
 				});
 			}).complete(function() {

@@ -83,6 +83,7 @@ html, body {
   height: 100%;
   font-family: lighter 1vw "Source Sans Pro";
   display: inline-block; 
+  overflow: hidden;
 }
 
 body
