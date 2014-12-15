@@ -17,7 +17,6 @@ Contributors:
 */
 
 
-
 var map, layers, basemaps;
 
 $(document).ready(function () {
@@ -218,6 +217,8 @@ $(document).ready(function () {
 
 				layers["Boat Launches"].addTo(map);
 					$(".legendItem[name='Boat Launches']").show();
+
+				$(".legendItem[name='Bathymetry']").show();
 
 				
 			break;
@@ -516,6 +517,7 @@ $(document).ready(function () {
 			}).complete(function() {
 				$(document).trigger("layeradd", [layers["Restrooms"], "Restrooms", true, 'img/restrooms-NPS.svg']);
 			});
+
 		// }
 
 		/////////////////////////
@@ -546,7 +548,6 @@ $(document).ready(function () {
 			});
 
 		// }
-
 
 });
 
