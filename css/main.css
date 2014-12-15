@@ -290,6 +290,14 @@ h3 {
   padding-top: 5vh;
 }
 
+h4 {
+  font: "Source Sans Pro";
+  text-decoration: none;
+  font-color: #39342f;
+  display: inline;
+  padding-top: 5vh;
+}
+
 #bar
 {
   display: inline-block;
