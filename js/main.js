@@ -573,7 +573,7 @@ $(document).ready(function () {
 							{
 								if(feature.properties.Description)
 								{
-									layer.bindPopup("<center><h3>" + feature.properties.name + "</h3><br>" + feature.properties.Description + "<div class='popupImage'><img src='" + feature.properties.image + "'></div></center>");
+									layer.bindPopup("<center><h3>" + feature.properties.name + "</h3><br><h4> Difficulty: " + feature.properties.Difficulty + "</h4><br>" + feature.properties.Description + "<div class='popupImage'><img src='" + feature.properties.image + "'></div></center>");
 								}
 								else
 								{
@@ -585,7 +585,7 @@ $(document).ready(function () {
 							{
 								if(feature.properties.Description)
 								{
-									layer.bindPopup("<center><h3>" + feature.properties.name + "</h3><br>" + feature.properties.Description + "</center>");
+									layer.bindPopup("<center><h3>" + feature.properties.name + "</h3><br><h4> Difficulty: " + feature.properties.Difficulty + "</h4></center>");
 								}
 								else
 								{
