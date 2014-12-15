@@ -295,6 +295,14 @@ h3 {
    margin-right: 0.5vw;
 }
 
+#barHeader img
+{
+  vertical-align: middle;
+  margin-bottom: 0.5vh;
+  width: 2.4vh;
+
+}
+
 li.selected a
 {
   color: #afbca2;;

@@ -156,18 +156,9 @@ $(document).ready(function () {
 				
 			break;
 
-			case "plantsAnimals":
-
-				basemaps.trails.setOpacity(0.5);
-				basemaps.bathymetry.setOpacity(0.3);
-
-				layers["Trails"].addTo(map);
-						$(".legendItem[name='Trails']").show();
-
-			break;
-
 			case "explore":
 
+				map.fitBounds(defaultBbox);
 				basemaps.trails.setOpacity(0.5);
 				basemaps.bathymetry.setOpacity(0.3);
 
@@ -256,7 +247,9 @@ $(document).ready(function () {
 				}).setOpacity(0.5).addTo(map),
 				"bluff labels": L.tileLayer('data/custom-tiles/bluffLabels/{z}/{x}/{y}.png').addTo(map),
 				"labels": L.tileLayer('https://a.tiles.mapbox.com/v4/nps.5dfeaf68/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibnBzIiwiYSI6Ik5yOFVUR2sifQ.lcpvx7UEgHGoeObibjqMBw').addTo(map),
-				"bathymetry": L.tileLayer('data/custom-tiles/bathymetry/{z}/{x}/{y}.png').setOpacity(0.3).addTo(map)
+				"bathymetry": L.tileLayer('data/custom-tiles/bathymetry/{z}/{x}/{y}.png', {
+					bounds: [[43.4082,-89.7383],[43.4266,-89.7254]]
+				}).setOpacity(0.3).addTo(map)
 			};
 
 			// populated below
