@@ -539,7 +539,14 @@ $(document).ready(function () {
 					onEachFeature: function (feature, layer) {
 						if(feature.properties.name != null)
 						{
-							layer.bindPopup("<center><h3>" + feature.properties.name + "</center></h3>");
+							if(feature.properties.image)
+							{
+								layer.bindPopup("<center><h3>" + feature.properties.name + "</center></h3><div class='popupImage'><img src='" + feature.properties.image + "'></div>");
+							}
+							else
+							{
+								layer.bindPopup("<center><h3>" + feature.properties.name + "</center></h3>");
+							}
 						}
 					}
 				});
