@@ -66,6 +66,9 @@ $(document).ready(function () {
 			case "home":
 				map.fitBounds(defaultBbox);
 
+				basemaps.bathymetry.setOpacity(0.3);
+				basemaps.trails.setOpacity(0.5);
+
 				layers["Trails"].addTo(map);
 					$(".legendItem[name='Trails']").show();
 
@@ -92,6 +95,7 @@ $(document).ready(function () {
 				map.fitBounds(defaultBbox);
 
 				basemaps.trails.setOpacity(0.5);
+				basemaps.bathymetry.setOpacity(0.3);
 
 				layers["Trails"].addTo(map);
 					$(".legendItem[name='Trails']").show();
@@ -107,6 +111,7 @@ $(document).ready(function () {
 				map.fitBounds(defaultBbox);
 
 				basemaps.trails.setOpacity(0.5);
+				basemaps.bathymetry.setOpacity(0.3);
 
 				layers["Trails"].addTo(map);
 					$(".legendItem[name='Trails']").show();
@@ -119,6 +124,7 @@ $(document).ready(function () {
 				map.fitBounds(defaultBbox);
 
 				basemaps.trails.setOpacity(0.5);
+				basemaps.bathymetry.setOpacity(0.3);
 
 				layers["Trails"].addTo(map);
 					$(".legendItem[name='Trails']").show();
@@ -131,6 +137,7 @@ $(document).ready(function () {
 				map.fitBounds(defaultBbox);
 				
 				basemaps.trails.setOpacity(1);
+				basemaps.bathymetry.setOpacity(0.3);
 
 				layers["Trails"].addTo(map);
 					$(".legendItem[name='Trails']").show();
@@ -139,13 +146,12 @@ $(document).ready(function () {
 			case "fishing":
 
 				basemaps.trails.setOpacity(0.5);
+				basemaps.bathymetry.setOpacity(0.8);
 
 				map.fitBounds([[43.4277100925, -89.7249126434],[43.4077287885, -89.7392463684]]);
 
 				layers["Boat Launches"].addTo(map);
 					$(".legendItem[name='Boat Launches']").show();
-
-				layers["Bathymetry"].addTo(map);
 
 				
 			break;
@@ -153,6 +159,7 @@ $(document).ready(function () {
 			case "plantsAnimals":
 
 				basemaps.trails.setOpacity(0.5);
+				basemaps.bathymetry.setOpacity(0.3);
 
 				layers["Trails"].addTo(map);
 						$(".legendItem[name='Trails']").show();
@@ -162,6 +169,7 @@ $(document).ready(function () {
 			case "explore":
 
 				basemaps.trails.setOpacity(0.5);
+				basemaps.bathymetry.setOpacity(0.3);
 
 				layers["Trails"].addTo(map);
 					$(".legendItem[name='Trails']").show();
@@ -247,7 +255,8 @@ $(document).ready(function () {
 					bounds: [[43.3377,-89.8235],[43.4741,-89.5952]]
 				}).setOpacity(0.5).addTo(map),
 				"bluff labels": L.tileLayer('data/custom-tiles/bluffLabels/{z}/{x}/{y}.png').addTo(map),
-				"labels": L.tileLayer('https://a.tiles.mapbox.com/v4/nps.5dfeaf68/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibnBzIiwiYSI6Ik5yOFVUR2sifQ.lcpvx7UEgHGoeObibjqMBw').addTo(map)
+				"labels": L.tileLayer('https://a.tiles.mapbox.com/v4/nps.5dfeaf68/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibnBzIiwiYSI6Ik5yOFVUR2sifQ.lcpvx7UEgHGoeObibjqMBw').addTo(map),
+				"bathymetry": L.tileLayer('data/custom-tiles/bathymetry/{z}/{x}/{y}.png').setOpacity(0.3).addTo(map)
 			};
 
 			// populated below
@@ -468,21 +477,6 @@ $(document).ready(function () {
 				$(document).trigger("layeradd", [layers["Trails"], "Trails", true, "img/trail-curvy.svg"]);
 			});
 
-			$.getJSON("data/bathymetry.json", function (data) {
-
-				var style = {
-					"color": "#90CAF9",
-				    "weight": 0.9,
-				    "opacity": 0.65
-				}
-
-				layers["Bathymetry"] = L.geoJson(data, {
-					className: "bathymetry",
-					style: style
-				});
-			}).complete(function() {
-				$(document).trigger("layeradd", [layers["Bathymetry"], "Bathymetry", false]);
-			});
 		// }
 
 
