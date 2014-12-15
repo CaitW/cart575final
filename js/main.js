@@ -541,7 +541,7 @@ $(document).ready(function () {
 						{
 							if(feature.properties.image)
 							{
-								layer.bindPopup("<center><h3>" + feature.properties.name + "</center></h3><div class='popupImage'><img src='" + feature.properties.image + "'></div>");
+								layer.bindPopup("<center><h3>" + feature.properties.name + "</h3><div class='popupImage'><img src='" + feature.properties.image + "'></div></center>");
 							}
 							else
 							{
