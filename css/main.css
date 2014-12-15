@@ -288,6 +288,7 @@ h3 {
   font-color: #39342f;
   display: inline;
   padding-top: 5vh;
+  font-size: 100%;
 }
 
 h4 {
@@ -296,6 +297,12 @@ h4 {
   font-color: #39342f;
   display: inline;
   padding-top: 5vh;
+  font-size: 80%;
+}
+
+.description
+{
+  font-size: 80%;
 }
 
 #bar
