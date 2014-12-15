@@ -543,11 +543,27 @@ $(document).ready(function () {
 						{
 							if(feature.properties.image)
 							{
-								layer.bindPopup("<center><h3>" + feature.properties.name + "</h3><div class='popupImage'><img src='" + feature.properties.image + "'></div></center>");
+								if(feature.properties.Description)
+								{
+									layer.bindPopup("<center><h3>" + feature.properties.name + "</h3><br>" + feature.properties.Description + "<div class='popupImage'><img src='" + feature.properties.image + "'></div></center>");
+								}
+								else
+								{
+									layer.bindPopup("<center><h3>" + feature.properties.name + "</h3><br><div class='popupImage'><img src='" + feature.properties.image + "'></div></center>");
+								}
+								
 							}
 							else
 							{
-								layer.bindPopup("<center><h3>" + feature.properties.name + "</center></h3>");
+								if(feature.properties.Description)
+								{
+									layer.bindPopup("<center><h3>" + feature.properties.name + "</h3><br>" + feature.properties.Description + "</center>");
+								}
+								else
+								{
+									layer.bindPopup("<center><h3>" + feature.properties.name + "</center></h3>");
+								}
+								
 							}
 						}
 					}
