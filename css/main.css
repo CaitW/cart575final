@@ -91,14 +91,37 @@ body
   font-size: 1vw;
 }
 
+#logoBox img
+{
+  height: 8vw;
+  width: 8vw;
+}
+
+
 @media (max-width: 768px)
 {
-  body {font-size: 2vw;}
+  body {
+    font-size: 2vw;
+  }
+
+ #logoBox img {
+    height: 12vw;
+    width: 12vw;
+  }
 }
 
 @media (max-width: 1200px)
 {
-  body {font-size: 1.5vw;}
+
+  body {
+    font-size: 1.5vw;
+  }
+
+  #logoBox img {
+    height: 10vw;
+    width: 10vw;
+  }
+
 }
 
 #map {
@@ -353,11 +376,8 @@ li.selected a
   padding: 1vh 2vw;
 }
 
-#logoBox img
-{
-  height: 8vw;
-  width: 8vw;
-}
+
+
 
 /* ==========================================================================
    Helper classes

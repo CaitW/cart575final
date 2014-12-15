@@ -30,7 +30,7 @@ $(document).ready(function () {
 
 	map = L.map('map', {
 		zoomControl: false,
-		maxBounds: [[43.46503732537239,-89.6070671081543], [43.37311218382002,-89.8267936706543]],
+		maxBounds: [[43.48503732537239,-89.6070671081543], [43.37311218382002,-89.8267936706543]],
 		minZoom: 13
 	}).setView([43.4180,-89.7297], 14);
 
@@ -146,6 +146,8 @@ $(document).ready(function () {
 
 				layers["Historical Points"].addTo(map);
 					$(".legendItem[name='Historical Points']").show();
+
+				$(".")
 			break;
 
 			case "nativeamerican":
