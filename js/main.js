@@ -383,9 +383,11 @@ $(document).ready(function () {
 							html: "<img src='img/boat-launch-NPS.svg'>" // I do think these should be static sizes---the vh makes them too responsive + small on other screens. can edit in CSS>
 						});
 						return L.marker(latlng, {
-							icon: marker,
-							clickable: false
+							icon: marker
 						})
+					},
+					onEachFeature: function(feature, layer) {
+						layer.bindPopup("<center><h3>" + feature.properties.Name + "</h3><br><div class='popupImage'><img src='" + feature.properties.image + "'></div></center>");
 					}
 				});
 			}).complete(function() {
